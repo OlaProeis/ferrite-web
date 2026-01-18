@@ -5,14 +5,14 @@ const footerLinks = {
   product: [
     { name: 'Features', href: '/features' },
     { name: 'Download', href: '/download' },
-    { name: 'Changelog', href: 'https://github.com/OlaProeis/Ferrite/blob/main/CHANGELOG.md' },
-    { name: 'Roadmap', href: 'https://github.com/OlaProeis/Ferrite/issues' },
+    { name: 'Changelog', href: '/changelog' },
+    { name: 'Shortcuts', href: '/shortcuts' },
   ],
   resources: [
     { name: 'Documentation', href: 'https://github.com/OlaProeis/Ferrite#readme' },
     { name: 'Blog', href: '/blog' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'About', href: '/about' },
-    { name: 'RSS Feed', href: '/rss.xml' },
   ],
   community: [
     { name: 'GitHub', href: 'https://github.com/OlaProeis/Ferrite' },
@@ -138,7 +138,7 @@ const footerLinks = {
       <div class="mt-12 pt-8 border-t border-ferrite-border">
         <div class="flex flex-col md:flex-row items-center justify-between gap-4">
           <p class="text-text-tertiary text-sm">
-            {{ currentYear }} Ferrite. Open source under the 
+            © {{ currentYear }} Ferrite. Open source under the 
             <a 
               href="https://github.com/OlaProeis/Ferrite/blob/main/LICENSE" 
               target="_blank"

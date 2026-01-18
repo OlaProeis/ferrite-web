@@ -20,5 +20,6 @@ useSeoMeta({
     <RoadAheadSection />
     <ContributeSection />
     <DownloadSection />
+    <NewsletterSection />
   </div>
 </template>

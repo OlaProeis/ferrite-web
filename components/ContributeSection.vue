@@ -77,8 +77,13 @@ const contributions = [
         </div>
       </div>
 
+      <!-- Translation Progress -->
+      <div class="max-w-md mx-auto mt-12">
+        <TranslationProgress />
+      </div>
+
       <!-- Community note -->
-      <div class="max-w-2xl mx-auto mt-12 text-center">
+      <div class="max-w-2xl mx-auto mt-8 text-center">
         <p class="text-sm text-text-tertiary">
           First time contributing to open source? No problem! 
           Look for issues labeled 

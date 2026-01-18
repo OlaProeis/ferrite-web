@@ -2,14 +2,24 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   
-  // Disable SSR - render as SPA to avoid hydration issues
-  ssr: false,
+  // SSR enabled for better SEO
+  ssr: true,
   
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/sitemap'
   ],
+
+  site: {
+    url: 'https://getferrite.dev',
+    name: 'Ferrite',
+  },
+
+  sitemap: {
+    strictNuxtContentPaths: true,
+  },
 
   tailwindcss: {
     cssPath: '~/assets/css/main.css',
@@ -42,8 +52,11 @@ export default defineNuxtConfig({
         { property: 'og:image', content: '/img/og-image.png' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@feraborern' },
+        { name: 'twitter:creator', content: '@feraborern' },
         { name: 'twitter:title', content: 'Ferrite - A Fast, Native Markdown Editor' },
-        { name: 'twitter:description', content: 'Ferrite is a fast, native Markdown editor built with Rust. No Electron bloat, just pure performance.' }
+        { name: 'twitter:description', content: 'Ferrite is a fast, native Markdown editor built with Rust. No Electron bloat, just pure performance.' },
+        { name: 'twitter:image', content: 'https://getferrite.dev/img/og-image.png' }
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const { stats, fetchStats, formatNumber } = useGitHubStats()
+
+onMounted(() => {
+  fetchStats()
+})
+</script>
+
 <template>
   <section class="relative overflow-hidden">
     <!-- Background effects -->
@@ -7,7 +15,7 @@
     <div class="relative container-wide section">
       <div class="max-w-4xl mx-auto text-center">
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 mb-6 animate-fade-in">
+        <div class="inline-flex items-center gap-2 mb-6 animate-fade-in flex-wrap justify-center">
           <span class="badge-rust">
             <svg class="w-3.5 h-3.5 mr-1" viewBox="0 0 24 24" fill="currentColor">
               <path d="M23.6 9.2L12.9.4c-.5-.4-1.3-.4-1.8 0L.4 9.2c-.5.4-.5 1.1 0 1.5l10.7 8.8c.5.4 1.3.4 1.8 0l10.7-8.8c.5-.4.5-1.1 0-1.5zM12 15.6L3.7 9.9 12 4.3l8.3 5.6-8.3 5.7z"/>
@@ -15,8 +23,21 @@
             Built with Rust
           </span>
           <span class="text-xs px-2 py-1 rounded-full bg-ferrite-surface-elevated text-text-secondary border border-ferrite-border font-mono">
-            v0.2.5.1 · in active development
+            v{{ stats.latestVersion }} · in active development
           </span>
+          <!-- GitHub Stars Badge -->
+          <a 
+            href="https://github.com/OlaProeis/Ferrite" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-full bg-ferrite-surface-elevated text-text-secondary border border-ferrite-border hover:border-amber-500/50 hover:text-amber-400 transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+            </svg>
+            <span v-if="stats.stars > 0">{{ formatNumber(stats.stars) }}</span>
+            <span v-else class="w-8 h-3 bg-ferrite-border rounded animate-pulse" />
+          </a>
         </div>
 
         <!-- Headline -->
