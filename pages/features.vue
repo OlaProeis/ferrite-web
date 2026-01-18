@@ -270,10 +270,10 @@ const activeFeature = ref<string | null>(null)
             </a>
           </div>
 
-          <!-- Stats: Languages -->
+          <!-- Stats: Diagram Types -->
           <div class="col-span-6 lg:col-span-2 card-hover p-6 flex flex-col items-center justify-center text-center">
-            <span class="text-4xl lg:text-5xl font-display font-bold text-rust mb-2">40+</span>
-            <span class="text-sm text-text-tertiary">languages</span>
+            <span class="text-4xl lg:text-5xl font-display font-bold text-rust mb-2">11</span>
+            <span class="text-sm text-text-tertiary">diagram types</span>
           </div>
 
           <!-- Stats: Platforms -->
