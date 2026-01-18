@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   
+  // Disable SSR - render as SPA to avoid hydration issues
+  ssr: false,
+  
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
