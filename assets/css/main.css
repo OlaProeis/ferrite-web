@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ferrite-bg text-text-secondary font-body;
+  }
+
+  ::selection {
+    @apply bg-rust/30 text-text-primary;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-ferrite-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ferrite-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-rust/50;
+  }
+}
+
+@layer components {
+  /* Button styles */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-display font-medium text-sm transition-all duration-300 ease-out;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-rust text-white shadow-glow hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply btn bg-ferrite-surface border border-ferrite-border text-text-primary hover:border-rust/50 hover:bg-ferrite-surface-elevated;
+  }
+
+  .btn-ghost {
+    @apply btn text-text-secondary hover:text-text-primary hover:bg-ferrite-surface;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-ferrite-surface border border-ferrite-border rounded-xl p-6 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:border-rust/30 hover:shadow-glow;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  /* Container */
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-rust;
+  }
+
+  /* Glow effect */
+  .glow-border {
+    @apply relative;
+  }
+
+  .glow-border::before {
+    content: '';
+    @apply absolute -inset-px rounded-xl bg-gradient-rust opacity-0 blur-sm transition-opacity duration-300;
+  }
+
+  .glow-border:hover::before {
+    @apply opacity-50;
+  }
+
+  /* Feature icon */
+  .feature-icon {
+    @apply w-12 h-12 rounded-lg bg-rust/10 border border-rust/20 flex items-center justify-center text-rust;
+  }
+
+  /* Link styles */
+  .link {
+    @apply text-rust hover:text-rust-light transition-colors underline-offset-4 hover:underline;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border;
+  }
+
+  .badge-rust {
+    @apply badge bg-rust/10 border-rust/30 text-rust;
+  }
+
+  .badge-success {
+    @apply badge bg-success/10 border-success/30 text-success;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+
+  /* Text balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient mask for fade effects */
+  .mask-gradient-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .mask-gradient-t {
+    mask-image: linear-gradient(to top, black 60%, transparent 100%);
+  }
+}
+
+/* Giscus theme override */
+.giscus {
+  @apply mt-12;
+}
+
+.giscus-frame {
+  @apply rounded-xl overflow-hidden;
+}
