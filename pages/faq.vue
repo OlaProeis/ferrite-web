@@ -97,15 +97,19 @@ const faqs = [
   },
 ]
 
-const openItems = ref<Set<string>>(new Set())
+// Use array instead of Set for SSR compatibility
+const openItems = ref<string[]>([])
 
 const toggleItem = (id: string) => {
-  if (openItems.value.has(id)) {
-    openItems.value.delete(id)
+  const index = openItems.value.indexOf(id)
+  if (index > -1) {
+    openItems.value.splice(index, 1)
   } else {
-    openItems.value.add(id)
+    openItems.value.push(id)
   }
 }
+
+const isOpen = (id: string) => openItems.value.includes(id)
 </script>
 
 <template>
@@ -150,7 +154,7 @@ const toggleItem = (id: string) => {
                   <span class="font-medium text-text-primary pr-4">{{ item.q }}</span>
                   <svg 
                     class="w-5 h-5 text-text-tertiary shrink-0 transition-transform duration-200"
-                    :class="{ 'rotate-180': openItems.has(`${category.category}-${index}`) }"
+                    :class="{ 'rotate-180': isOpen(`${category.category}-${index}`) }"
                     viewBox="0 0 24 24" 
                     fill="none" 
                     stroke="currentColor" 
@@ -168,7 +172,7 @@ const toggleItem = (id: string) => {
                   leave-to-class="opacity-0 max-h-0"
                 >
                   <div 
-                    v-if="openItems.has(`${category.category}-${index}`)"
+                    v-if="isOpen(`${category.category}-${index}`)"
                     class="px-5 pb-5 overflow-hidden"
                   >
                     <p class="text-text-secondary text-sm leading-relaxed border-t border-ferrite-border pt-4">

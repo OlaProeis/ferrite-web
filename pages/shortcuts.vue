@@ -8,9 +8,12 @@ useSeoMeta({
 
 const isMac = ref(false)
 
-onMounted(() => {
-  isMac.value = navigator.platform.toLowerCase().includes('mac')
-})
+// Only access navigator on client side
+if (import.meta.client) {
+  onMounted(() => {
+    isMac.value = navigator.platform.toLowerCase().includes('mac')
+  })
+}
 
 const mod = computed(() => isMac.value ? '⌘' : 'Ctrl')
 const alt = computed(() => isMac.value ? '⌥' : 'Alt')
