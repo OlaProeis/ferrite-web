@@ -1,14 +1,32 @@
 # Ferrite Website
 
-The official website and development blog for [Ferrite](https://github.com/OlaProeis/Ferrite), the fast Rust-based Markdown editor.
+The official website for [Ferrite](https://github.com/OlaProeis/Ferrite), the fast native Markdown editor built with Rust.
+
+**Live at [getferrite.dev](https://getferrite.dev)**
+
+---
+
+## Features
+
+- **Landing page** with feature showcase, screenshots, and download links
+- **Dynamic GitHub stats** - Stars, downloads, and version pulled from GitHub API
+- **Blog** with RSS feed for release notes and development updates
+- **FAQ** with collapsible questions and answers
+- **Keyboard shortcuts** reference (platform-aware Mac/Windows toggle)
+- **Changelog** with formatted release history
+- **Download page** with platform-specific instructions
+- **SEO optimized** with SSR, sitemap, and JSON-LD structured data
+- **Translation progress** widget showing Weblate status
 
 ## Tech Stack
 
-- **Framework:** [Nuxt 3](https://nuxt.com/) with Vue 3
-- **Content:** [Nuxt Content](https://content.nuxt.com/) for blog posts
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Comments:** [Giscus](https://giscus.app/) (GitHub Discussions)
-- **Deployment:** Vercel (or any static host)
+| Technology | Purpose |
+|------------|---------|
+| [Nuxt 3](https://nuxt.com/) | Vue 3 framework with SSR |
+| [Nuxt Content](https://content.nuxt.com/) | Blog posts & markdown |
+| [Tailwind CSS](https://tailwindcss.com/) | Styling |
+| [Giscus](https://giscus.app/) | Comments via GitHub Discussions |
+| [Vercel](https://vercel.com/) | Hosting & deployment |
 
 ## Getting Started
 
@@ -17,7 +35,7 @@ The official website and development blog for [Ferrite](https://github.com/OlaPr
 - Node.js 18+
 - npm, pnpm, or yarn
 
-### Installation
+### Development
 
 ```bash
 # Install dependencies
@@ -27,13 +45,13 @@ npm install
 npm run dev
 ```
 
-The site will be available at `http://localhost:3000`.
+Visit `http://localhost:3000`
 
-### Building for Production
+### Production Build
 
 ```bash
-# Generate static site
-npm run generate
+# Build for production
+npm run build
 
 # Preview production build
 npm run preview
@@ -44,64 +62,62 @@ npm run preview
 ```
 ferrite-webpage/
 ├── assets/
-│   └── css/
-│       └── main.css          # Global styles & Tailwind imports
+│   ├── css/main.css              # Global styles & Tailwind
+│   └── img/                      # Images (demo.gif, icons, screenshots)
 ├── components/
-│   ├── AppHeader.vue         # Site header & navigation
-│   ├── AppFooter.vue         # Site footer
-│   ├── GiscusComments.vue    # Comment system
-│   ├── HeroSection.vue       # Landing page hero
-│   ├── FeaturesSection.vue   # Features showcase
-│   └── ...                   # Other section components
+│   ├── AppHeader.vue             # Navigation
+│   ├── AppFooter.vue             # Footer with links
+│   ├── HeroSection.vue           # Landing hero with GitHub stats
+│   ├── FeaturesSection.vue       # Feature cards
+│   ├── ScreenshotsSection.vue    # View mode toggle
+│   ├── RoadAheadSection.vue      # Roadmap timeline
+│   ├── ContributeSection.vue     # Contribution options
+│   ├── DownloadSection.vue       # Platform download cards
+│   ├── NewsletterSection.vue     # RSS subscription
+│   ├── TranslationProgress.vue   # Weblate progress bars
+│   └── GiscusComments.vue        # Comment system
+├── composables/
+│   └── useGitHubStats.ts         # GitHub API integration
 ├── content/
-│   └── blog/                 # Blog posts (Markdown)
+│   └── blog/                     # Blog posts (Markdown)
 ├── layouts/
-│   └── default.vue           # Main layout
+│   └── default.vue               # Main layout
 ├── pages/
-│   ├── index.vue             # Landing page
-│   ├── features.vue          # Features page
-│   ├── download.vue          # Download page
-│   ├── about.vue             # About page
-│   └── blog/
-│       ├── index.vue         # Blog listing
-│       └── [...slug].vue     # Blog post template
-├── public/
-│   ├── favicon.svg           # Site favicon
-│   ├── giscus-theme.css      # Giscus custom theme
-│   └── robots.txt
+│   ├── index.vue                 # Landing page
+│   ├── features.vue              # Detailed features
+│   ├── download.vue              # Downloads & instructions
+│   ├── blog/
+│   │   ├── index.vue             # Blog listing
+│   │   └── [...slug].vue         # Blog post template
+│   ├── faq.vue                   # FAQ page
+│   ├── shortcuts.vue             # Keyboard shortcuts
+│   ├── changelog.vue             # Release history
+│   ├── about.vue                 # About & timeline
+│   └── error.vue                 # 404 page
 ├── server/
 │   └── routes/
-│       └── rss.xml.ts        # RSS feed generator
-├── nuxt.config.ts            # Nuxt configuration
-├── tailwind.config.ts        # Tailwind configuration
+│       └── rss.xml.ts            # RSS feed generator
+├── public/
+│   ├── favicon.svg
+│   ├── robots.txt
+│   └── img/                      # OG images, screenshots
+├── nuxt.config.ts
+├── tailwind.config.js
 └── package.json
 ```
 
-## Customization
-
-### Updating GitHub Links
-
-Search for `YOUR_USERNAME` across the codebase and replace with your actual GitHub username.
-
-### Giscus Setup
-
-1. Go to [giscus.app](https://giscus.app/)
-2. Configure for your repository
-3. Copy the configuration values to `.env` (see `.env.example`)
-4. Update `GiscusComments.vue` with your values
-
-### Adding Blog Posts
+## Adding Blog Posts
 
 Create a new `.md` file in `content/blog/`:
 
 ```markdown
 ---
 title: "Your Post Title"
-description: "A brief description"
-date: 2026-01-15
-category: development
+description: "A brief description for RSS and previews"
+date: 2026-01-20
+category: release
 readingTime: "5 min read"
-tags: ["tag1", "tag2"]
+tags: ["release", "feature"]
 ---
 
 # Your Post Title
@@ -109,37 +125,57 @@ tags: ["tag1", "tag2"]
 Content goes here...
 ```
 
-### Design System
+The post will automatically appear in the blog listing and RSS feed.
 
-The color palette and design tokens are in `tailwind.config.ts`. The main colors:
+## Design System
 
-- **Background:** `#0a0a0b` (near-black)
-- **Surface:** `#141416` (elevated surfaces)
-- **Rust (primary):** `#e07020` (accent color)
-- **Text:** `#f5f5f5` (primary), `#a0a0a5` (secondary)
+The color palette is defined in `tailwind.config.js`:
+
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Background | `#0a0a0b` | Page background |
+| Surface | `#141416` | Cards, elevated areas |
+| Rust | `#e07020` | Primary accent |
+| Text Primary | `#f5f5f5` | Headings |
+| Text Secondary | `#a0a0a5` | Body text |
+
+Fonts: **Outfit** (headings), **DM Sans** (body), **JetBrains Mono** (code)
 
 ## Deployment
 
-### Vercel
+The site auto-deploys to Vercel on push to `main`.
 
-1. Import the repository to Vercel
-2. It will auto-detect Nuxt and configure everything
-3. Deploy!
-
-### Other Static Hosts
+For other hosts:
 
 ```bash
 npm run generate
+# Upload .output/public to any static host
 ```
 
-Upload the `.output/public` directory to any static host (GitHub Pages, Netlify, Cloudflare Pages, etc.).
+## Environment Variables
+
+Copy `.env.example` to `.env` and configure:
+
+```bash
+# Giscus (optional - for blog comments)
+GISCUS_REPO=your-username/your-repo
+GISCUS_REPO_ID=your-repo-id
+GISCUS_CATEGORY=Announcements
+GISCUS_CATEGORY_ID=your-category-id
+```
+
+## Contributing
+
+Contributions welcome! This website is part of the [Ferrite](https://github.com/OlaProeis/Ferrite) project.
 
 ## AI-Assisted Development
 
-This website was built using AI-assisted development with [Claude](https://anthropic.com) (Anthropic) via [Cursor](https://cursor.com). The human developer provided direction, reviewed output, and guided architecture while AI handled code generation.
-
-This transparency is intentional - consistent with the main [Ferrite](https://github.com/OlaProeis/Ferrite) project's open approach to AI-assisted development.
+This website was built using AI-assisted development with [Claude](https://anthropic.com) via [Cursor](https://cursor.com). Human developer provided direction and review; AI handled code generation. This transparency is consistent with the main Ferrite project's open approach.
 
 ## License
 
 MIT - See [LICENSE](LICENSE) for details.
+
+---
+
+**[getferrite.dev](https://getferrite.dev)** | **[Ferrite on GitHub](https://github.com/OlaProeis/Ferrite)**
