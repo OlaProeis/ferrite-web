@@ -65,18 +65,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    prerender: {
-      routes: ['/sitemap.xml', '/rss.xml']
-    }
-  },
-
-  routeRules: {
-    '/': { prerender: true },
-    '/features': { prerender: true },
-    '/download': { prerender: true },
-    '/about': { prerender: true },
-    '/blog': { prerender: true },
-    '/blog/**': { prerender: true }
+    preset: 'vercel'
   },
 
   compatibilityDate: '2024-11-01'
