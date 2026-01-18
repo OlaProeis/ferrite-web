@@ -25,16 +25,34 @@ interface GitHubStats {
   error: string | null
 }
 
+// Default stats for SSR and initial render
+const defaultStats: GitHubStats = {
+  stars: 0,
+  forks: 0,
+  totalDownloads: 0,
+  latestVersion: '0.2.5.1',
+  latestReleaseDate: 'January 2026',
+  loading: true,
+  error: null,
+}
+
 export const useGitHubStats = () => {
-  const stats = useState<GitHubStats>('github-stats', () => ({
-    stars: 0,
-    forks: 0,
-    totalDownloads: 0,
-    latestVersion: '0.2.5.1',
-    latestReleaseDate: 'January 2026',
-    loading: true,
-    error: null,
-  }))
+  // Use tryUseNuxtApp to check if we're in a valid Nuxt context
+  const nuxtApp = tryUseNuxtApp()
+  
+  // If no Nuxt context (shouldn't happen in normal usage, but safety first)
+  // return a basic ref-based state
+  if (!nuxtApp) {
+    const stats = ref<GitHubStats>({ ...defaultStats })
+    return {
+      stats,
+      fetchStats: async () => {},
+      formatNumber: (num: number) => num.toString(),
+    }
+  }
+
+  // Use useState for shared state across components (SSR-safe)
+  const stats = useState<GitHubStats>('github-stats', () => ({ ...defaultStats }))
 
   const fetchStats = async () => {
     // Only fetch on client side to avoid SSR issues

@@ -4,6 +4,11 @@ export default defineNuxtConfig({
   
   // SSR enabled for better SEO
   ssr: true,
+
+  // Enable async context for better SSR composable support
+  experimental: {
+    asyncContext: true,
+  },
   
   modules: [
     '@nuxtjs/tailwindcss',

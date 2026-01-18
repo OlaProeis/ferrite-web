@@ -1,10 +1,11 @@
 <script setup lang="ts">
 const route = useRoute()
-const { data: post } = await useAsyncData(`blog-${route.path}`, () => 
+const { data: post, error } = await useAsyncData(`blog-${route.path}`, () => 
   queryContent(route.path).findOne()
 )
 
-if (!post.value) {
+// Handle 404 in a SSR-safe way
+if (error.value || !post.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Post not found'
