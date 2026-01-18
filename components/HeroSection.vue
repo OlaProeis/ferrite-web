@@ -23,7 +23,7 @@ onMounted(() => {
             Built with Rust
           </span>
           <span class="text-xs px-2 py-1 rounded-full bg-ferrite-surface-elevated text-text-secondary border border-ferrite-border font-mono">
-            v{{ stats.latestVersion }} · in active development
+            v{{ stats.latestVersion }} · v0.2.6 in development
           </span>
           <!-- GitHub Stars Badge -->
           <a 
