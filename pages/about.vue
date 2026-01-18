@@ -71,13 +71,13 @@ const timeline = [
           <div class="prose prose-lg text-text-secondary space-y-4">
             <p>
               It started with Notepad. When Microsoft added Copilot to Notepad, I thought: 
-              "I could build something better." Working with AI and Markdown files daily, 
+              "I could try to build something here." Working with AI and Markdown files daily, 
               I wanted an editor that understood both - and didn't require Electron's bloat.
             </p>
             <p>
               What began as "a Notepad clone with Markdown support" quickly snowballed. 
               JSON/YAML tree viewers. Mermaid diagrams. Git integration. A Hacker News post 
-              generated a flood of feature requests. The project grew from idea to 700+ GitHub 
+              generated a flood of feature requests. The project grew from idea to 800+ GitHub 
               stars in under a month.
             </p>
             <p>

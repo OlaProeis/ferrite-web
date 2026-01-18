@@ -142,7 +142,7 @@ const { data: relatedPosts } = await useAsyncData(`related-${route.path}`, () =>
           <div class="flex items-center gap-4">
             <span class="text-sm text-text-tertiary">Share this post:</span>
             <a 
-              :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://ferrite.dev${post._path}`)}`"
+              :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://getferrite.dev${post._path}`)}`"
               target="_blank"
               rel="noopener noreferrer"
               class="text-text-tertiary hover:text-rust transition-colors"
@@ -153,7 +153,7 @@ const { data: relatedPosts } = await useAsyncData(`related-${route.path}`, () =>
               </svg>
             </a>
             <a 
-              :href="`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://ferrite.dev${post._path}`)}`"
+              :href="`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://getferrite.dev${post._path}`)}`"
               target="_blank"
               rel="noopener noreferrer"
               class="text-text-tertiary hover:text-rust transition-colors"

@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
     .sort({ date: -1 })
     .find()
 
-  const siteUrl = 'https://ferrite.dev'
+  const siteUrl = 'https://getferrite.dev'
   const feedTitle = 'Ferrite Blog'
   const feedDescription = 'Development blog for Ferrite - the fast, native Markdown editor built with Rust.'
 
