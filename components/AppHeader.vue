@@ -5,6 +5,7 @@ const mobileMenuOpen = ref(false)
 const navLinks = [
   { name: 'Features', href: '/features' },
   { name: 'Download', href: '/download' },
+  { name: 'Changelog', href: '/changelog' },
   { name: 'Blog', href: '/blog' },
   { name: 'FAQ', href: '/faq' },
   { name: 'About', href: '/about' },

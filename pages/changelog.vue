@@ -8,6 +8,38 @@ useSeoMeta({
 
 const releases = [
   {
+    version: '0.2.5.2',
+    date: 'January 20, 2026',
+    highlights: [
+      'Delete Line & Move Line shortcuts',
+      'macOS file type associations',
+      'Windows MSI installer & portable build',
+      'Linux RPM package support',
+    ],
+    changes: {
+      added: [
+        'Delete Line shortcut (Cmd/Ctrl+D)',
+        'Move Line Up/Down (Alt+Up/Down)',
+        'macOS Finder "Open With" integration (.md, .json, .yaml, .toml, .txt)',
+        'Windows portable build for USB drives',
+        'Windows MSI installer with Start Menu shortcut',
+        'Linux RPM package for Fedora/RHEL/CentOS',
+      ],
+      improved: [
+        'I18n audit - replaced hardcoded strings with translation keys',
+        'Removed ~200 orphaned translation keys',
+        'Locale files now have consistent structure',
+      ],
+      fixed: [
+        'Ctrl+X cutting entire document when nothing selected',
+        'Linux window drag getting mouse stuck',
+        'Split mode cursor position issues',
+        'macOS modifier tooltips (now shows Cmd instead of Ctrl)',
+        'Semantic minimap highlight accuracy',
+      ],
+    },
+  },
+  {
     version: '0.2.5.1',
     date: 'January 17, 2026',
     highlights: [

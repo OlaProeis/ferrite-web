@@ -4,8 +4,8 @@ const platforms = [
     id: 'windows', 
     name: 'Windows', 
     icon: 'windows',
-    versions: ['Windows 10+', '64-bit'],
-    file: 'ferrite-windows-x64.zip'
+    versions: ['Windows 10+', 'MSI / Portable'],
+    file: 'ferrite-windows-x64.msi'
   },
   { 
     id: 'macos', 
@@ -18,7 +18,7 @@ const platforms = [
     id: 'linux', 
     name: 'Linux', 
     icon: 'linux',
-    versions: ['Ubuntu 20.04+', '.deb / .tar.gz'],
+    versions: ['Ubuntu 20.04+', '.deb / .rpm / .tar.gz'],
     file: 'ferrite-editor_amd64.deb'
   },
 ]
