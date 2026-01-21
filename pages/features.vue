@@ -286,6 +286,9 @@ const activeFeature = ref<string | null>(null)
       </div>
     </section>
 
+    <!-- Hidden Gems / Power User Tips -->
+    <FeatureTipsSection />
+
     <!-- Honest Limitations -->
     <section class="section bg-ferrite-surface/30">
       <div class="container-narrow">
