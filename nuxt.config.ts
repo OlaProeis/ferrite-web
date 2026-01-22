@@ -49,6 +49,9 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'Ferrite is a fast, native Markdown editor built with Rust. No Electron bloat, just pure performance.' },
         { name: 'theme-color', content: '#0a0a0b' },
+        { name: 'author', content: 'Ferrite Team' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'googlebot', content: 'index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1' },
         // Open Graph
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Ferrite' },
@@ -66,8 +69,11 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'apple-touch-icon', href: '/favicon.svg' },
+        { rel: 'alternate', type: 'application/rss+xml', title: 'Ferrite Blog RSS', href: '/rss.xml' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'dns-prefetch', href: 'https://api.github.com' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap' }
       ]
     }
