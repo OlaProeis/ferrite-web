@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Features - Ferrite',
-  description: 'Discover what makes Ferrite different: native Mermaid diagrams, semantic minimap, CSV viewing, and more.',
+  description: 'Discover what makes Ferrite different: native Mermaid diagrams, semantic minimap, CSV viewing, and more. This is a work in process, and not all features of mermaid.js currently work',
   ogTitle: 'Features - Ferrite',
   ogDescription: 'Discover what makes Ferrite different: native Mermaid diagrams, semantic minimap, CSV viewing, and more.',
   ogImage: 'https://getferrite.dev/img/og-image.png',
@@ -252,7 +252,7 @@ const activeFeature = ref<string | null>(null)
               CJK Support
             </h3>
             <p class="text-text-secondary text-sm">
-              Full Chinese, Japanese, Korean rendering. Paragraph indentation settings. 
+              Full Chinese, Japanese, Korean rendering. 
               Custom font selection for regional glyph preferences.
             </p>
           </div>
