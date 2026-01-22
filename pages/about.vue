@@ -4,7 +4,14 @@ useSeoMeta({
   description: 'Learn about Ferrite, the fast native Markdown editor built with Rust and AI-assisted development.',
   ogTitle: 'About Ferrite',
   ogDescription: 'Learn about Ferrite, the fast native Markdown editor built with Rust and AI-assisted development.',
+  ogImage: 'https://getferrite.dev/img/og-image.png',
 })
+
+// Add breadcrumbs
+useBreadcrumbs([
+  { name: 'Home', path: '/' },
+  { name: 'About' },
+])
 
 const timeline = [
   {

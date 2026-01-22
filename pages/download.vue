@@ -4,7 +4,14 @@ useSeoMeta({
   description: 'Download Ferrite for Windows, macOS, or Linux. Free and open source Markdown editor.',
   ogTitle: 'Download Ferrite',
   ogDescription: 'Download Ferrite for Windows, macOS, or Linux. Free and open source Markdown editor.',
+  ogImage: 'https://getferrite.dev/img/og-image.png',
 })
+
+// Add breadcrumbs
+useBreadcrumbs([
+  { name: 'Home', path: '/' },
+  { name: 'Download' },
+])
 
 const { stats, fetchStats, formatNumber } = useGitHubStats()
 

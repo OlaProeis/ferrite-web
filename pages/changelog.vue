@@ -4,7 +4,14 @@ useSeoMeta({
   description: 'Complete changelog for Ferrite releases. See what\'s new, improved, and fixed in each version.',
   ogTitle: 'Changelog - Ferrite',
   ogDescription: 'Complete changelog for Ferrite releases. See what\'s new, improved, and fixed in each version.',
+  ogImage: 'https://getferrite.dev/img/og-image.png',
 })
+
+// Add breadcrumbs
+useBreadcrumbs([
+  { name: 'Home', path: '/' },
+  { name: 'Changelog' },
+])
 
 const releases = [
   {

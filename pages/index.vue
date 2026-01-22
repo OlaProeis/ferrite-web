@@ -4,7 +4,7 @@ useSeoMeta({
   description: 'Ferrite is a fast, native Markdown editor built with Rust. No Electron bloat, just pure performance. WYSIWYG editing, Mermaid diagrams, syntax highlighting, and more.',
   ogTitle: 'Ferrite - A Fast, Native Markdown Editor',
   ogDescription: 'Ferrite is a fast, native Markdown editor built with Rust. No Electron bloat, just pure performance.',
-  ogImage: '/og-image.png',
+  ogImage: 'https://getferrite.dev/img/og-image.png',
   twitterCard: 'summary_large_image',
 })
 </script>

@@ -2,7 +2,16 @@
 useSeoMeta({
   title: 'Features - Ferrite',
   description: 'Discover what makes Ferrite different: native Mermaid diagrams, semantic minimap, CSV viewing, and more.',
+  ogTitle: 'Features - Ferrite',
+  ogDescription: 'Discover what makes Ferrite different: native Mermaid diagrams, semantic minimap, CSV viewing, and more.',
+  ogImage: 'https://getferrite.dev/img/og-image.png',
 })
+
+// Add breadcrumbs
+useBreadcrumbs([
+  { name: 'Home', path: '/' },
+  { name: 'Features' },
+])
 
 const activeFeature = ref<string | null>(null)
 </script>

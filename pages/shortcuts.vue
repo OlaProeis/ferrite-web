@@ -4,7 +4,14 @@ useSeoMeta({
   description: 'Complete keyboard shortcuts reference for Ferrite, the fast native Markdown editor.',
   ogTitle: 'Keyboard Shortcuts - Ferrite',
   ogDescription: 'Complete keyboard shortcuts reference for Ferrite, the fast native Markdown editor.',
+  ogImage: 'https://getferrite.dev/img/og-image.png',
 })
+
+// Add breadcrumbs
+useBreadcrumbs([
+  { name: 'Home', path: '/' },
+  { name: 'Keyboard Shortcuts' },
+])
 
 const isMac = ref(false)
 

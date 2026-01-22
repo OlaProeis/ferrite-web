@@ -4,7 +4,14 @@ useSeoMeta({
   description: 'Development blog for Ferrite. Release notes, technical deep-dives, and insights into AI-assisted development.',
   ogTitle: 'Ferrite Blog',
   ogDescription: 'Development blog for Ferrite. Release notes, technical deep-dives, and insights into AI-assisted development.',
+  ogImage: 'https://getferrite.dev/img/og-image.png',
 })
+
+// Add breadcrumbs
+useBreadcrumbs([
+  { name: 'Home', path: '/' },
+  { name: 'Blog' },
+])
 
 const { data: posts } = await useAsyncData('blog-posts', () => 
   queryContent('blog')

@@ -1,7 +1,10 @@
 <script setup lang="ts">
 // Add JSON-LD structured data for SEO
+// Note: Canonical URLs are handled per-page via useBreadcrumbs or page-specific meta
+// Note: softwareVersion is static here to avoid SSR hydration issues
 useHead({
   script: [
+    // SoftwareApplication schema - helps search engines understand this is downloadable software
     {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
@@ -22,7 +25,7 @@ useHead({
           url: 'https://getferrite.dev',
         },
         downloadUrl: 'https://getferrite.dev/download',
-        softwareVersion: '0.2.5.1',
+        softwareVersion: '0.2.5.2',
         releaseNotes: 'https://getferrite.dev/changelog',
         screenshot: 'https://getferrite.dev/img/og-image.png',
         featureList: [
@@ -37,6 +40,7 @@ useHead({
         ],
       }),
     },
+    // WebSite schema - basic site identity
     {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
@@ -45,11 +49,21 @@ useHead({
         name: 'Ferrite',
         url: 'https://getferrite.dev',
         description: 'A fast, native Markdown editor built with Rust.',
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: 'https://getferrite.dev/search?q={search_term_string}',
-          'query-input': 'required name=search_term_string',
-        },
+      }),
+    },
+    // Organization schema - helps with brand recognition in search
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Ferrite',
+        url: 'https://getferrite.dev',
+        logo: 'https://getferrite.dev/favicon.svg',
+        sameAs: [
+          'https://github.com/OlaProeis/Ferrite',
+          'https://twitter.com/feraborern',
+        ],
       }),
     },
   ],

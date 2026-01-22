@@ -54,7 +54,8 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: 'Ferrite' },
         { property: 'og:title', content: 'Ferrite - A Fast, Native Markdown Editor' },
         { property: 'og:description', content: 'Ferrite is a fast, native Markdown editor built with Rust. No Electron bloat, just pure performance.' },
-        { property: 'og:image', content: '/img/og-image.png' },
+        { property: 'og:image', content: 'https://getferrite.dev/img/og-image.png' },
+        { property: 'og:url', content: 'https://getferrite.dev' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@feraborern' },

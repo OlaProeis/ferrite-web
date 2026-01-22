@@ -12,15 +12,58 @@ if (error.value || !post.value) {
   })
 }
 
+const siteUrl = useSiteUrl()
+
 useSeoMeta({
   title: `${post.value.title} - Ferrite Blog`,
   description: post.value.description,
   ogTitle: post.value.title,
   ogDescription: post.value.description,
-  ogImage: post.value.image || '/og-image.png',
+  ogImage: post.value.image || `${siteUrl}/img/og-image.png`,
   ogType: 'article',
   articlePublishedTime: post.value.date,
   articleAuthor: 'Ferrite Team',
+})
+
+// Add breadcrumb schema for blog post navigation
+useBreadcrumbs([
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: '/blog' },
+  { name: post.value.title },
+])
+
+// Add Article schema for rich snippets
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.value.title,
+        description: post.value.description,
+        image: post.value.image || `${siteUrl}/img/og-image.png`,
+        datePublished: post.value.date,
+        author: {
+          '@type': 'Organization',
+          name: 'Ferrite Team',
+          url: siteUrl,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Ferrite',
+          logo: {
+            '@type': 'ImageObject',
+            url: `${siteUrl}/favicon.svg`,
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${siteUrl}${route.path}`,
+        },
+      }),
+    },
+  ],
 })
 
 const formatDate = (date: string) => {

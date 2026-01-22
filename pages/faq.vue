@@ -4,7 +4,14 @@ useSeoMeta({
   description: 'Frequently asked questions about Ferrite, the fast native Markdown editor built with Rust.',
   ogTitle: 'FAQ - Ferrite',
   ogDescription: 'Frequently asked questions about Ferrite, the fast native Markdown editor built with Rust.',
+  ogImage: 'https://getferrite.dev/img/og-image.png',
 })
+
+// Add breadcrumbs for navigation
+useBreadcrumbs([
+  { name: 'Home', path: '/' },
+  { name: 'FAQ' },
+])
 
 const faqs = [
   {
@@ -96,6 +103,29 @@ const faqs = [
     ],
   },
 ]
+
+// Add FAQPage schema for rich snippets in Google
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.flatMap(category => 
+          category.questions.map(q => ({
+            '@type': 'Question',
+            name: q.q,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: q.a,
+            },
+          }))
+        ),
+      }),
+    },
+  ],
+})
 
 // Use array instead of Set for SSR compatibility
 const openItems = ref<string[]>([])
