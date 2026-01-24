@@ -77,9 +77,13 @@ ferrite-webpage/
 │   ├── TranslationProgress.vue   # Weblate progress bars
 │   └── GiscusComments.vue        # Comment system
 ├── composables/
-│   └── useGitHubStats.ts         # GitHub API integration
+│   ├── useGitHubStats.ts         # GitHub API integration
+│   └── useSeo.ts                 # SEO utilities (canonical, breadcrumbs)
 ├── content/
 │   └── blog/                     # Blog posts (Markdown)
+├── docs/                         # Project documentation
+│   ├── SEO.md                    # SEO setup & configuration
+│   └── PERFORMANCE.md            # Performance optimization tasks
 ├── layouts/
 │   └── default.vue               # Main layout
 ├── pages/
@@ -94,6 +98,8 @@ ferrite-webpage/
 │   ├── changelog.vue             # Release history
 │   ├── about.vue                 # About & timeline
 │   └── error.vue                 # 404 page
+├── plugins/
+│   └── seo.client.ts             # Canonical URL plugin
 ├── server/
 │   └── routes/
 │       └── rss.xml.ts            # RSS feed generator
@@ -140,6 +146,34 @@ The color palette is defined in `tailwind.config.js`:
 | Text Secondary | `#a0a0a5` | Body text |
 
 Fonts: **Outfit** (headings), **DM Sans** (body), **JetBrains Mono** (code)
+
+## Documentation
+
+Additional documentation is available in the `docs/` folder:
+
+| Document | Description |
+|----------|-------------|
+| [SEO.md](docs/SEO.md) | SEO configuration, structured data, search console setup |
+| [PERFORMANCE.md](docs/PERFORMANCE.md) | Performance optimization tasks and targets |
+
+## SEO & Performance
+
+The site is optimized for search engines with:
+
+- **SSR (Server-Side Rendering)** - Full HTML delivered to crawlers
+- **Structured Data** - JSON-LD schemas for SoftwareApplication, FAQPage, Article
+- **Sitemap** - Auto-generated at `/sitemap.xml`
+- **RSS Feed** - Blog feed at `/rss.xml`
+- **Open Graph & Twitter Cards** - Social sharing previews
+
+Performance optimizations:
+
+- **@nuxt/image** - Automatic WebP conversion, lazy loading
+- **Font display swap** - Non-blocking font loading
+- **Preconnect hints** - Faster third-party connections
+- **DNS prefetch** - GitHub API prefetching
+
+See [docs/PERFORMANCE.md](docs/PERFORMANCE.md) for current metrics and optimization tasks.
 
 ## Deployment
 

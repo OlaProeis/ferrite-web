@@ -185,10 +185,14 @@ function getActiveDescription(tip: FeatureTip) {
           <!-- Screenshot with Hotspots -->
           <div class="relative bg-ferrite-surface">
             <div class="aspect-video bg-ferrite-surface-elevated">
-              <img 
+              <NuxtImg 
                 :src="tip.image" 
                 :alt="tip.title"
                 class="w-full h-full object-cover"
+                width="800"
+                height="450"
+                loading="lazy"
+                format="webp"
               />
             </div>
 

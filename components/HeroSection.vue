@@ -83,10 +83,14 @@ onMounted(() => {
             
             <!-- Actual demo -->
             <div class="relative rounded-xl overflow-hidden shadow-2xl border border-ferrite-border">
-              <img 
-                src="~/assets/img/demo.gif" 
+              <NuxtImg 
+                src="/img/demo.gif" 
                 alt="Ferrite in action - demonstrating Markdown editing with live preview"
                 class="w-full"
+                width="1200"
+                height="750"
+                loading="eager"
+                :preload="true"
               />
             </div>
           </div>

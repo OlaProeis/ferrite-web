@@ -96,17 +96,24 @@ const formatDate = (date: string) => {
           >
             <!-- Post Image -->
             <div v-if="post.image" class="aspect-video rounded-lg overflow-hidden mb-4 bg-ferrite-surface-elevated">
-              <img 
+              <NuxtImg 
                 :src="post.image" 
                 :alt="post.title"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              >
+                width="600"
+                height="338"
+                loading="lazy"
+                format="webp"
+              />
             </div>
             <div v-else class="aspect-video rounded-lg mb-4 bg-gradient-to-br from-rust/20 to-copper/20 flex items-center justify-center">
-              <img 
-                src="~/assets/img/icon_256.png" 
+              <NuxtImg 
+                src="/img/icon_256.png" 
                 alt="Ferrite" 
                 class="w-16 h-16 opacity-50"
+                width="64"
+                height="64"
+                loading="lazy"
               />
             </div>
 

@@ -125,11 +125,15 @@ const { data: relatedPosts } = await useAsyncData(`related-${route.path}`, () =>
     <!-- Featured Image -->
     <div v-if="post.image" class="container-wide pb-12">
       <div class="aspect-video rounded-xl overflow-hidden bg-ferrite-surface">
-        <img 
+        <NuxtImg 
           :src="post.image" 
           :alt="post.title"
           class="w-full h-full object-cover"
-        >
+          width="1200"
+          height="675"
+          loading="eager"
+          format="webp"
+        />
       </div>
     </div>
 

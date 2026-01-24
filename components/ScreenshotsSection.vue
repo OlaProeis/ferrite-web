@@ -47,11 +47,15 @@ const currentImage = computed(() => views.find(v => v.id === activeView.value)?.
         <!-- Screenshot with transition -->
         <div class="relative rounded-xl overflow-hidden shadow-2xl border border-ferrite-border">
           <Transition name="fade" mode="out-in">
-            <img 
+            <NuxtImg 
               :key="activeView"
               :src="currentImage" 
               :alt="`Ferrite ${views.find(v => v.id === activeView)?.name}`"
               class="w-full"
+              width="1920"
+              height="1080"
+              :loading="activeView === 'split' ? 'eager' : 'lazy'"
+              format="webp"
             />
           </Transition>
         </div>
