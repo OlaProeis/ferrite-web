@@ -1,29 +1,28 @@
 <script setup lang="ts">
 const upcomingFeatures = [
   {
-    version: 'v0.2.6',
+    version: 'v0.2.7',
     status: 'next',
-    title: 'Performance & Code Signing',
+    title: 'Code Signing & Polish',
     items: [
       'Code signing (stop Windows Defender false positives)',
-      'Handle 80MB+ CSV files with lazy row parsing',
-      'View-only mode for huge files',
       'Executable code blocks (run snippets in preview)',
       'Content blocks / callouts ([!NOTE], [!WARNING])',
       'Vim mode (optional modal editing)',
+      'Further memory optimizations for large files',
     ],
   },
   {
     version: 'v0.3.0',
     status: 'planned',
-    title: 'Mermaid Crate + Custom Editor',
+    title: 'Mermaid Crate & Advanced Features',
     items: [
       'Extract Mermaid renderer as standalone Rust crate',
       'SVG and PNG export for diagrams',
-      'Custom editor widget (unlocks multi-cursor, code folding)',
       'Wikilinks and backlinks support',
       'Manual diagram layout with drag-to-reposition',
-      'Windows Inno Setup installer with file associations',
+      'Rectangular/column selection (Alt+drag)',
+      'Sticky scroll for context headers',
     ],
   },
   {

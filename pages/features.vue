@@ -42,8 +42,38 @@ const activeFeature = ref<string | null>(null)
       <div class="container-wide">
         <div class="grid grid-cols-12 gap-4 lg:gap-6">
           
+          <!-- Large: FerriteEditor - NEW in v0.2.6 -->
+          <div class="col-span-12 card-hover overflow-hidden group relative min-h-[320px]">
+            <div class="absolute inset-0 bg-gradient-to-br from-rust/10 to-emerald-500/5" />
+            <div class="relative p-6 lg:p-8 h-full flex flex-col">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-rust text-sm font-mono">// v0.2.6</span>
+                <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded">NEW</span>
+              </div>
+              <h2 class="font-display font-bold text-2xl lg:text-3xl text-text-primary mb-3">
+                FerriteEditor: Custom Editor from Scratch
+              </h2>
+              <p class="text-text-secondary mb-6 max-w-2xl">
+                Complete ground-up reimplementation of the text editor. <span class="text-rust font-semibold">Massive memory savings</span> - a 4MB file now adds ~15MB (was 1.5GB with egui's TextEdit). 
+                Virtual scrolling, rope-based buffer, and O(log n) text operations.
+              </p>
+              
+              <!-- Feature pills -->
+              <div class="mt-auto flex gap-3 flex-wrap">
+                <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">virtual scrolling</span>
+                <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">multi-cursor</span>
+                <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">code folding</span>
+                <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">IME support</span>
+                <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">bracket matching</span>
+                <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">word wrap</span>
+                <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">undo/redo</span>
+                <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">syntax highlighting</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Large: Mermaid Diagrams -->
-          <div class="col-span-12 lg:col-span-8 card-hover overflow-hidden group relative min-h-[320px]">
+          <div class="col-span-12 lg:col-span-8 card-hover overflow-hidden group relative min-h-[280px]">
             <div class="absolute inset-0 bg-gradient-to-br from-rust/5 to-transparent" />
             <div class="relative p-6 lg:p-8 h-full flex flex-col">
               <span class="text-rust text-sm font-mono mb-2">// diagrams</span>
@@ -69,10 +99,11 @@ const activeFeature = ref<string | null>(null)
             </div>
           </div>
 
-          <!-- Stats: Memory -->
+          <!-- Stats: Memory Improvement -->
           <div class="col-span-6 lg:col-span-2 card-hover p-6 flex flex-col items-center justify-center text-center">
-            <span class="text-4xl lg:text-5xl font-display font-bold text-rust mb-2">~72</span>
-            <span class="text-sm text-text-tertiary">MB idle RAM</span>
+            <span class="text-4xl lg:text-5xl font-display font-bold text-rust mb-2">5x</span>
+            <span class="text-sm text-text-tertiary">less RAM usage</span>
+            <span class="text-xs text-text-tertiary mt-1">vs previous versions</span>
           </div>
 
           <!-- Stats: Startup -->
@@ -298,65 +329,82 @@ const activeFeature = ref<string | null>(null)
     <!-- Hidden Gems / Power User Tips -->
     <FeatureTipsSection />
 
-    <!-- Honest Limitations -->
-    <section class="section bg-ferrite-surface/30">
+    <!-- Recently Fixed (v0.2.6) -->
+    <section class="section bg-emerald-500/5">
       <div class="container-narrow">
         <h2 class="font-display font-bold text-display-sm text-text-primary mb-4 text-center">
-          Honest limitations
+          Recently fixed in v0.2.6
         </h2>
         <p class="text-text-secondary text-center mb-8">
-          We're building in public. Here's what's blocked, incomplete, or not yet implemented:
+          The new FerriteEditor resolved longstanding limitations:
+        </p>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <div class="card p-5 border-emerald-500/30">
+            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
+              <span class="text-emerald-500">&#x2713;</span>
+              Multi-cursor
+            </h4>
+            <p class="text-sm text-text-tertiary">Ctrl+Click to add cursors. Full simultaneous editing support.</p>
+          </div>
+          <div class="card p-5 border-emerald-500/30">
+            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
+              <span class="text-emerald-500">&#x2713;</span>
+              Code folding
+            </h4>
+            <p class="text-sm text-text-tertiary">Fold regions with gutter indicators. Navigation skips folds.</p>
+          </div>
+          <div class="card p-5 border-emerald-500/30">
+            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
+              <span class="text-emerald-500">&#x2713;</span>
+              IME support
+            </h4>
+            <p class="text-sm text-text-tertiary">Chinese Pinyin, Japanese Romaji, Korean Hangul input.</p>
+          </div>
+          <div class="card p-5 border-emerald-500/30">
+            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
+              <span class="text-emerald-500">&#x2713;</span>
+              Large file memory
+            </h4>
+            <p class="text-sm text-text-tertiary">Virtual scrolling + rope buffer. 4MB file: 15MB vs 1.5GB before.</p>
+          </div>
+        </div>
+
+        <h2 class="font-display font-bold text-display-sm text-text-primary mb-4 text-center">
+          Remaining limitations
+        </h2>
+        <p class="text-text-secondary text-center mb-8">
+          We're building in public. Here's what's not yet implemented:
         </p>
         
         <div class="grid md:grid-cols-2 gap-4">
           <div class="card p-5">
             <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
               <span class="text-amber-500">&#x26A0;</span>
-              Multi-cursor incomplete
-            </h4>
-            <p class="text-sm text-text-tertiary">Blocked by egui's TextEdit. Cursor rendering works, text operations don't. Fix: v0.3.0 custom editor.</p>
-          </div>
-          <div class="card p-5">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-amber-500">&#x26A0;</span>
-              Code folding incomplete
-            </h4>
-            <p class="text-sm text-text-tertiary">Detection works, but text hiding not possible in egui. Fix: v0.3.0 custom editor.</p>
-          </div>
-          <div class="card p-5">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-amber-500">&#x26A0;</span>
-              IME positioning
-            </h4>
-            <p class="text-sm text-text-tertiary">Chinese/Japanese IME candidate window may appear offset from cursor.</p>
-          </div>
-          <div class="card p-5">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-amber-500">&#x26A0;</span>
-              Large files (&gt;10MB)
-            </h4>
-            <p class="text-sm text-text-tertiary">Performance degrades. Lazy loading and view-only mode planned for v0.2.6.</p>
-          </div>
-          <div class="card p-5">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-amber-500">&#x26A0;</span>
               No code signing yet
             </h4>
-            <p class="text-sm text-text-tertiary">Windows Defender may flag Ferrite as suspicious. Code signing is urgent priority for v0.2.6.</p>
+            <p class="text-sm text-text-tertiary">Windows Defender may flag Ferrite as suspicious. Code signing is a priority.</p>
           </div>
           <div class="card p-5">
             <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
               <span class="text-amber-500">&#x26A0;</span>
               No LaTeX math yet
             </h4>
-            <p class="text-sm text-text-tertiary">Math rendering ($...$) not implemented. Planned for v0.4.0.</p>
+            <p class="text-sm text-text-tertiary">Math rendering ($...$) not implemented. Planned for future release.</p>
+          </div>
+          <div class="card p-5">
+            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
+              <span class="text-amber-500">&#x26A0;</span>
+              No Vim mode yet
+            </h4>
+            <p class="text-sm text-text-tertiary">Modal editing is planned now that we have a custom editor foundation.</p>
           </div>
         </div>
 
         <p class="text-center text-sm text-text-tertiary mt-6">
-          These limitations are documented in our 
-          <a href="https://github.com/OlaProeis/ferrite/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer" class="text-rust hover:underline">roadmap</a>.
-          Many will be addressed in the custom editor widget planned for v0.3.0.
+          See our 
+          <a href="https://github.com/OlaProeis/ferrite/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer" class="text-rust hover:underline">roadmap</a>
+          for planned features.
         </p>
       </div>
     </section>

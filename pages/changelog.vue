@@ -15,6 +15,55 @@ useBreadcrumbs([
 
 const releases = [
   {
+    version: '0.2.6',
+    date: 'January 26, 2026',
+    highlights: [
+      'Custom FerriteEditor - ground-up rewrite',
+      '100x less RAM (4MB file: 15MB vs 1.5GB)',
+      'Multi-cursor & code folding now work',
+      'Virtual scrolling + rope buffer',
+    ],
+    changes: {
+      added: [
+        'FerriteEditor - custom text editor built with egui drawing primitives',
+        'Virtual scrolling - only renders visible lines + buffer',
+        'Rope-based buffer (ropey) - O(log n) text operations',
+        'Full selection support - click-drag, Shift+Arrow, double/triple-click, Ctrl+A',
+        'Multi-cursor editing - Ctrl+Click to add cursors',
+        'Code folding with gutter indicators',
+        'IME support - Chinese Pinyin, Japanese Romaji, Korean Hangul',
+        'Bracket matching - windowed O(window) algorithm',
+        'Document navigation buttons - Top/Middle/Bottom jump',
+        'Semi-transparent selection highlighting',
+        'Cursor blink with theme-aware colors',
+        'Auto-focus new documents',
+      ],
+      improved: [
+        'Editor architecture - 2735 lines split into focused modules (43% reduction)',
+        'Memory: 4MB file adds ~15MB (was 1.5GB with egui TextEdit)',
+        'Search debouncing (150ms) - no more search on every keystroke',
+        'Large file optimizations - hash-based modification detection, reduced undo stack',
+        'Bracket matching - windowed ~20KB extraction (was 4.8GB/sec allocation)',
+        'Format toolbar connected to FerriteEditor buffer',
+        'Outline panel and minimap integrated with new scroll system',
+        'Font settings dynamically update editor',
+      ],
+      fixed: [
+        'Critical: 4MB file causing 1.8GB RAM usage (#45)',
+        'Per-frame document cloning for undo (240MB/sec allocation)',
+        'Case-insensitive search copying entire document',
+        'Memory not released on tab close',
+        'Text jumping to next line when typing at end',
+        'Cannot scroll to bottom of large files',
+        'Outline/Minimap cursor landing wrong line',
+        'Search highlight drift on wrapped lines',
+        'Box drawing characters (U+2500-U+257F) as squares',
+        'File browser context menu doubled icons',
+        'Windows Start Menu pixelated icon',
+      ],
+    },
+  },
+  {
     version: '0.2.5.2',
     date: 'January 20, 2026',
     highlights: [

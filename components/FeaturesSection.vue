@@ -45,20 +45,20 @@
         <div class="col-span-6 lg:col-span-5 grid grid-rows-2 gap-4 lg:gap-6">
           <div class="card-hover p-6 flex items-center justify-between">
             <div>
-              <span class="text-3xl font-display font-bold text-rust">~72MB</span>
-              <p class="text-sm text-text-tertiary mt-1">idle memory</p>
+              <span class="text-3xl font-display font-bold text-rust">100x</span>
+              <p class="text-sm text-text-tertiary mt-1">less RAM</p>
             </div>
             <div class="text-text-tertiary text-xs text-right">
-              down from 250MB<br/>in v0.2.5
+              4MB file: 15MB<br/>was 1.5GB before
             </div>
           </div>
           <div class="card-hover p-6 flex items-center justify-between">
             <div>
-              <span class="text-3xl font-display font-bold text-rust">&lt;1%</span>
-              <p class="text-sm text-text-tertiary mt-1">idle CPU</p>
+              <span class="text-3xl font-display font-bold text-rust">&lt;1s</span>
+              <p class="text-sm text-text-tertiary mt-1">cold start</p>
             </div>
             <div class="text-text-tertiary text-xs text-right">
-              down from 10%<br/>in v0.2.5
+              native Rust<br/>no Electron
             </div>
           </div>
         </div>
@@ -109,6 +109,14 @@
         <div class="col-span-12 card p-6 lg:p-8 bg-ferrite-surface-elevated/50">
           <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-text-secondary justify-center">
             <span class="flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
+              Multi-cursor editing
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
+              Code folding
+            </span>
+            <span class="flex items-center gap-1.5">
               <span class="w-1 h-1 rounded-full bg-rust"></span>
               40+ syntax languages
             </span>
@@ -126,11 +134,11 @@
             </span>
             <span class="flex items-center gap-1.5">
               <span class="w-1 h-1 rounded-full bg-rust"></span>
-              Custom shortcuts
+              IME support (CJK)
             </span>
             <span class="flex items-center gap-1.5">
               <span class="w-1 h-1 rounded-full bg-rust"></span>
-              CJK lazy loading
+              Bracket matching
             </span>
             <span class="flex items-center gap-1.5">
               <span class="w-1 h-1 rounded-full bg-rust"></span>
