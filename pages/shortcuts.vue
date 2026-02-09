@@ -189,7 +189,7 @@ const shortcuts = computed(() => [
           to customize any shortcut to your preference.
         </p>
         <p class="text-sm text-text-tertiary">
-          Vim mode coming in v0.2.6 for modal editing fans.
+          Vim mode coming in v0.2.7 for modal editing fans.
         </p>
       </div>
     </section>

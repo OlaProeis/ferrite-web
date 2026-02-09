@@ -30,7 +30,7 @@ const defaultStats: GitHubStats = {
   stars: 0,
   forks: 0,
   totalDownloads: 0,
-  latestVersion: '0.2.5.1',
+  latestVersion: '0.2.6.1',
   latestReleaseDate: 'January 2026',
   loading: true,
   error: null,

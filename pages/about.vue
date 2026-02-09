@@ -44,6 +44,16 @@ const timeline = [
     title: 'v0.2.5.1 - Polish',
     description: 'Memory optimization (250MB → 72MB), multi-encoding support, CPU optimization (10% → <1% idle), cursor positioning fixes.',
   },
+  {
+    date: 'Jan 26, 2026',
+    title: 'v0.2.6 - Custom Editor',
+    description: 'FerriteEditor: ground-up rewrite of the text editor. 100x less RAM (4MB file: 15MB vs 1.5GB). Virtual scrolling, rope buffer, multi-cursor, code folding, IME support.',
+  },
+  {
+    date: 'Feb 6, 2026',
+    title: 'v0.2.6.1 - Code Signed',
+    description: 'First code-signed release. Integrated terminal workspace (community contribution), productivity hub, major app.rs refactoring into ~15 modules, 80MB startup memory reduction.',
+  },
 ]
 </script>
 

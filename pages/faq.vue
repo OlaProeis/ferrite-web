@@ -73,7 +73,7 @@ const faqs = [
       },
       {
         q: 'Does Ferrite support Vim keybindings?',
-        a: 'Vim mode is planned for v0.2.6. Stay tuned!',
+        a: 'Vim mode is planned for v0.2.7. Stay tuned!',
       },
       {
         q: 'What Mermaid diagram types are supported?',
@@ -86,7 +86,7 @@ const faqs = [
     questions: [
       {
         q: 'Windows Defender flags Ferrite as suspicious',
-        a: 'This is a known issue with unsigned Rust applications. We\'re working on code signing for v0.2.6. For now, you can click "More info" then "Run anyway" or add an exception in Windows Defender.',
+        a: 'As of v0.2.6.1, Ferrite is code-signed via SignPath.io with a production certificate. You should no longer see SmartScreen warnings. If you\'re on an older version, update to v0.2.6.1 or later.',
       },
       {
         q: 'macOS won\'t let me open Ferrite',
@@ -94,7 +94,7 @@ const faqs = [
       },
       {
         q: 'Large files are slow',
-        a: 'Files over 10MB may experience slower performance. We\'re implementing lazy loading and view-only mode for large files in v0.2.6.',
+        a: 'v0.2.6 introduced FerriteEditor with virtual scrolling and a rope-based buffer, dramatically improving large file performance (4MB file: 15MB RAM vs 1.5GB before). Further optimizations including large file detection are planned for v0.2.7.',
       },
       {
         q: 'IME candidate window appears in wrong position',

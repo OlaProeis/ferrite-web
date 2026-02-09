@@ -3,13 +3,15 @@ const upcomingFeatures = [
   {
     version: 'v0.2.7',
     status: 'next',
-    title: 'Code Signing & Polish',
+    title: 'Performance, Features & Polish',
     items: [
-      'Code signing (stop Windows Defender false positives)',
-      'Executable code blocks (run snippets in preview)',
-      'Content blocks / callouts ([!NOTE], [!WARNING])',
+      'GitHub-style callouts ([!NOTE], [!TIP], [!WARNING], collapsible)',
+      'Check for updates button (manual, offline-first)',
+      'Wikilinks & backlinks panel',
       'Vim mode (optional modal editing)',
-      'Further memory optimizations for large files',
+      'Executable code blocks (run shell/Python snippets)',
+      'Large file detection & lazy CSV parsing',
+      'Scrollbar & word wrap bug fixes',
     ],
   },
   {
@@ -19,7 +21,6 @@ const upcomingFeatures = [
     items: [
       'Extract Mermaid renderer as standalone Rust crate',
       'SVG and PNG export for diagrams',
-      'Wikilinks and backlinks support',
       'Manual diagram layout with drag-to-reposition',
       'Rectangular/column selection (Alt+drag)',
       'Sticky scroll for context headers',

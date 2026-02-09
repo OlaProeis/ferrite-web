@@ -15,6 +15,47 @@ useBreadcrumbs([
 
 const releases = [
   {
+    version: '0.2.6.1',
+    date: 'February 6, 2026',
+    highlights: [
+      'First code-signed release',
+      'Integrated terminal workspace',
+      'Productivity hub',
+      'Major app.rs refactoring into ~15 modules',
+    ],
+    changes: {
+      added: [
+        'Integrated terminal workspace - multiple sessions, tiling, splits, theming (community PR #74)',
+        'Productivity hub - quick-access panel for common tasks (community PR #74)',
+        'Code signing - Windows artifacts signed via SignPath.io, no more SmartScreen warnings',
+        'Tab drag reorder with visual drop target indicator',
+        'File watcher auto-reload for externally modified files',
+        'Undo after text formatting (Bold, Italic, etc.)',
+        'Multiline blockquote rendering - merged into continuous blocks',
+        'CJK first-line paragraph indentation (Chinese 2em, Japanese 1em)',
+        'Memory diagnostics with [MEM] log messages at startup',
+      ],
+      improved: [
+        'App.rs refactoring - split 7,600+ line monolith into ~15 focused modules',
+        'Lazy CJK font loading - reduced startup memory by ~80MB',
+        'System locale detection - preloads only the one CJK font you likely need',
+        'Settings CJK change no longer loads all fonts',
+      ],
+      fixed: [
+        'Duplicate Line (Ctrl+Shift+D) wrong position',
+        'Keyboard shortcut conflict: Ctrl+Shift+E (ExportHtml changed to Ctrl+Shift+X)',
+        'Maximize/restore button icon disappearing on hover',
+        'Drag-drop image inserting at wrong position',
+        'Smart paste not working (stale cursor state)',
+        'Auto-save toggle inconsistency',
+        'Rendered mode raw editor stuttering on mode switch',
+        'Keyboard shortcut conflict: Ctrl+Backtick (FormatInlineCode changed to Ctrl+Shift+Backtick)',
+        'CJK font crash on startup (#63)',
+        'Portable Windows startup crash (#57)',
+      ],
+    },
+  },
+  {
     version: '0.2.6',
     date: 'January 26, 2026',
     highlights: [

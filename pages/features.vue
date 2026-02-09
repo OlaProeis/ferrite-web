@@ -326,17 +326,106 @@ const activeFeature = ref<string | null>(null)
       </div>
     </section>
 
+    <!-- Latest: v0.2.6.1 -->
+    <section class="section bg-gradient-to-b from-rust/5 to-emerald-500/5">
+      <div class="container-narrow">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-2 mb-4">
+            <span class="badge-rust">v0.2.6.1</span>
+            <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded">LATEST</span>
+          </div>
+          <h2 class="font-display font-bold text-display-md text-text-primary mb-4">
+            First code-signed release
+          </h2>
+          <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+            Integrated terminal workspace, productivity hub, major app.rs refactoring into ~15 modules, 
+            and numerous bug fixes. First community contribution!
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          <div class="card p-6 border-emerald-500/30">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-text-primary mb-2">Code Signed</h4>
+            <p class="text-sm text-text-tertiary">Windows artifacts digitally signed via SignPath.io with a production certificate. No more SmartScreen warnings.</p>
+          </div>
+          <div class="card p-6 border-emerald-500/30">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"/>
+                <line x1="12" y1="19" x2="20" y2="19"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-text-primary mb-2">Integrated Terminal</h4>
+            <p class="text-sm text-text-tertiary">Multiple sessions, tiling &amp; splits, drag-and-drop tabs, theming, transparency, and layout persistence.</p>
+          </div>
+          <div class="card p-6 border-emerald-500/30">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-text-primary mb-2">Productivity Hub</h4>
+            <p class="text-sm text-text-tertiary">Quick-access panel for common editing, navigation, and workflow tasks.</p>
+          </div>
+          <div class="card p-6 border-emerald-500/30">
+            <div class="w-10 h-10 rounded-xl bg-gradient-rust flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-text-primary mb-2">Major Refactoring</h4>
+            <p class="text-sm text-text-tertiary">Split 7,600+ line app.rs monolith into ~15 focused modules. CJK lazy loading saves ~80MB at startup.</p>
+          </div>
+          <div class="card p-6 border-emerald-500/30">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-text-primary mb-2">File Watcher</h4>
+            <p class="text-sm text-text-tertiary">Auto-reload externally modified files. Tab drag reorder. Undo after formatting operations.</p>
+          </div>
+          <div class="card p-6 border-emerald-500/30">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-text-primary mb-2">10+ Bug Fixes</h4>
+            <p class="text-sm text-text-tertiary">Shortcut conflicts, drag-drop positioning, smart paste, CJK crash fixes, portable startup crash, and more.</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <NuxtLink to="/changelog" class="link text-sm font-medium">
+            View full changelog &rarr;
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
     <!-- Hidden Gems / Power User Tips -->
     <FeatureTipsSection />
 
-    <!-- Recently Fixed (v0.2.6) -->
+    <!-- Fixed in v0.2.6 -->
     <section class="section bg-emerald-500/5">
       <div class="container-narrow">
         <h2 class="font-display font-bold text-display-sm text-text-primary mb-4 text-center">
-          Recently fixed in v0.2.6
+          Fixed in v0.2.6
         </h2>
         <p class="text-text-secondary text-center mb-8">
-          The new FerriteEditor resolved longstanding limitations:
+          The custom FerriteEditor resolved longstanding limitations:
         </p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
@@ -381,23 +470,16 @@ const activeFeature = ref<string | null>(null)
           <div class="card p-5">
             <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
               <span class="text-amber-500">&#x26A0;</span>
-              No code signing yet
-            </h4>
-            <p class="text-sm text-text-tertiary">Windows Defender may flag Ferrite as suspicious. Code signing is a priority.</p>
-          </div>
-          <div class="card p-5">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-amber-500">&#x26A0;</span>
               No LaTeX math yet
             </h4>
-            <p class="text-sm text-text-tertiary">Math rendering ($...$) not implemented. Planned for future release.</p>
+            <p class="text-sm text-text-tertiary">Math rendering ($...$) not implemented. Planned for v0.4.0.</p>
           </div>
           <div class="card p-5">
             <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
               <span class="text-amber-500">&#x26A0;</span>
               No Vim mode yet
             </h4>
-            <p class="text-sm text-text-tertiary">Modal editing is planned now that we have a custom editor foundation.</p>
+            <p class="text-sm text-text-tertiary">Modal editing is planned for v0.2.7 now that we have a custom editor foundation.</p>
           </div>
         </div>
 

@@ -25,7 +25,7 @@ useHead({
           url: 'https://getferrite.dev',
         },
         downloadUrl: 'https://getferrite.dev/download',
-        softwareVersion: '0.2.5.2',
+        softwareVersion: '0.2.6.1',
         releaseNotes: 'https://getferrite.dev/changelog',
         screenshot: 'https://getferrite.dev/img/og-image.png',
         featureList: [
