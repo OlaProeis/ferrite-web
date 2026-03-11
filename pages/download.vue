@@ -189,6 +189,42 @@ const platforms: Platform[] = [
             </div>
           </div>
         </div>
+
+        <!-- Nix/NixOS -->
+        <div class="card p-8 mt-8">
+          <div class="flex flex-col lg:flex-row lg:items-start gap-6">
+            <div class="flex items-start gap-4 lg:w-1/3">
+              <div class="w-14 h-14 rounded-xl bg-ferrite-surface-elevated border border-ferrite-border flex items-center justify-center shrink-0">
+                <svg class="w-7 h-7 text-text-primary" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7.352 1.592l-1.364.002L8.88 6.882H5.09l-1.1 1.89h4.946L12.2 14.65l-1.832 3.142h.006L8.049 13.3H4.005L2.905 15.19h3.19l-2.986 5.122h2.726l2.98-5.1 1.095 1.876-4.063 6.96h2.726l2.716-4.654 2.716 4.654h2.726l-4.062-6.96 1.096-1.878 2.979 5.101h2.726l-2.986-5.123h3.19l-1.1-1.89h-4.044l-2.325-4.492h.004l-1.832-3.143L18.064 8.77h4.946l-1.1-1.89h-3.79l2.893-5.288h-2.726l-2.548 4.654L14.006 3.37h.001L12.74 1.592h-2.726L12 5.246z"/>
+                </svg>
+              </div>
+              <div>
+                <h2 class="font-display font-bold text-xl text-text-primary">
+                  Nix / NixOS
+                </h2>
+                <p class="text-sm text-text-tertiary mt-1">
+                  x86_64 &amp; aarch64 on Linux and macOS
+                </p>
+              </div>
+            </div>
+            <div class="flex-1">
+              <pre class="p-4 bg-ferrite-surface-elevated rounded-lg text-sm font-mono overflow-x-auto border border-ferrite-border"><code class="text-text-secondary"># Run directly
+nix run github:OlaProeis/Ferrite
+
+# Build locally
+nix build github:OlaProeis/Ferrite
+
+# Development shell
+nix develop github:OlaProeis/Ferrite</code></pre>
+              <p class="text-xs text-text-tertiary mt-3">
+                Official <code class="px-1.5 py-0.5 bg-ferrite-surface-elevated rounded text-xs">flake.nix</code> for reproducible builds. 
+                Also supports declarative NixOS and Home Manager usage. 
+                See the <a href="https://github.com/OlaProeis/Ferrite" target="_blank" rel="noopener noreferrer" class="text-rust hover:underline">GitHub repo</a> for full documentation.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
