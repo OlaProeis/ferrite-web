@@ -54,6 +54,11 @@ const timeline = [
     title: 'v0.2.6.1 - Code Signed',
     description: 'First code-signed release. Integrated terminal workspace (community contribution), productivity hub, major app.rs refactoring into ~15 modules, 80MB startup memory reduction.',
   },
+  {
+    date: 'Mar 2026',
+    title: 'v0.2.7 - Features & Polish',
+    description: 'Wikilinks & backlinks, Vim mode, GitHub-style callouts, visual frontmatter editor, welcome view, Unicode complex script support (Phase 1), MSI installer overhaul, PortableApps.com packaging, Nix/NixOS support, and 20+ bug fixes.',
+  },
 ]
 </script>
 

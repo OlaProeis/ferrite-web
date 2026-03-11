@@ -73,7 +73,7 @@ const faqs = [
       },
       {
         q: 'Does Ferrite support Vim keybindings?',
-        a: 'Vim mode is planned for v0.2.7. Stay tuned!',
+        a: 'Yes! Vim mode was added in v0.2.7. Toggle it in Settings → Editor. Supports Normal, Insert, and Visual modes with essential commands (hjkl, dd, yy, p, /search, v/V selection).',
       },
       {
         q: 'What Mermaid diagram types are supported?',
@@ -94,7 +94,7 @@ const faqs = [
       },
       {
         q: 'Large files are slow',
-        a: 'v0.2.6 introduced FerriteEditor with virtual scrolling and a rope-based buffer, dramatically improving large file performance (4MB file: 15MB RAM vs 1.5GB before). Further optimizations including large file detection are planned for v0.2.7.',
+        a: 'v0.2.6 introduced FerriteEditor with virtual scrolling and a rope-based buffer (4MB file: 15MB RAM vs 1.5GB before). v0.2.7 added large file detection (>10MB warning), lazy CSV row parsing (reduces memory from ~200MB to ~8MB for 1M-row files), and syntax highlighting cache optimizations. Files >50MB still bottleneck on initial I/O — memory-mapped I/O is planned for v0.4+.',
       },
       {
         q: 'IME candidate window appears in wrong position',

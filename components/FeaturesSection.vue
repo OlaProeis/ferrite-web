@@ -110,19 +110,27 @@
           <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-text-secondary justify-center">
             <span class="flex items-center gap-1.5">
               <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
-              Multi-cursor editing
+              Wikilinks &amp; backlinks
             </span>
             <span class="flex items-center gap-1.5">
               <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
+              Vim mode
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
+              GitHub-style callouts
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
+              Frontmatter editor
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-rust"></span>
+              Multi-cursor editing
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-rust"></span>
               Code folding
-            </span>
-            <span class="flex items-center gap-1.5">
-              <span class="w-1 h-1 rounded-full bg-rust"></span>
-              40+ syntax languages
-            </span>
-            <span class="flex items-center gap-1.5">
-              <span class="w-1 h-1 rounded-full bg-rust"></span>
-              Multi-encoding support
             </span>
             <span class="flex items-center gap-1.5">
               <span class="w-1 h-1 rounded-full bg-rust"></span>
@@ -138,7 +146,7 @@
             </span>
             <span class="flex items-center gap-1.5">
               <span class="w-1 h-1 rounded-full bg-rust"></span>
-              Bracket matching
+              Unicode scripts
             </span>
             <span class="flex items-center gap-1.5">
               <span class="w-1 h-1 rounded-full bg-rust"></span>

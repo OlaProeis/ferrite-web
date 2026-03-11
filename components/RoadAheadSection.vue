@@ -1,29 +1,28 @@
 <script setup lang="ts">
 const upcomingFeatures = [
   {
-    version: 'v0.2.7',
+    version: 'v0.2.8',
     status: 'next',
-    title: 'Performance, Features & Polish',
+    title: 'UI, Accessibility & Text Shaping',
     items: [
-      'GitHub-style callouts ([!NOTE], [!TIP], [!WARNING], collapsible)',
-      'Check for updates button (manual, offline-first)',
-      'Wikilinks & backlinks panel',
-      'Vim mode (optional modal editing)',
       'Executable code blocks (run shell/Python snippets)',
-      'Large file detection & lazy CSV parsing',
-      'Scrollbar & word wrap bug fixes',
+      'Unicode text shaping engine (HarfRust - Phase 2)',
+      'LSP integration (diagnostics, hover, go to definition)',
+      'Traditional Alt-key menu bar',
+      'XML tree viewer, INI/ENV file support',
+      'Log file viewing with level highlighting',
     ],
   },
   {
     version: 'v0.3.0',
     status: 'planned',
-    title: 'Mermaid Crate & Advanced Features',
+    title: 'Mermaid Crate, RTL & Markdown',
     items: [
       'Extract Mermaid renderer as standalone Rust crate',
+      'Full RTL & bidirectional text support',
       'SVG and PNG export for diagrams',
+      'HTML rendering for GitHub parity',
       'Manual diagram layout with drag-to-reposition',
-      'Rectangular/column selection (Alt+drag)',
-      'Sticky scroll for context headers',
     ],
   },
   {
@@ -34,7 +33,7 @@ const upcomingFeatures = [
       'Native LaTeX math rendering ($...$ and $$...$$)',
       'Fractions, subscripts, Greek letters, matrices',
       'Read-only DOCX/XLSX viewing (page-less rendering)',
-      'OpenDocument (ODT/ODS) support',
+      'FerriteEditor standalone crate extraction',
     ],
   },
   {

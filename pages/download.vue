@@ -42,8 +42,9 @@ const platforms: Platform[] = [
     icon: 'M3 5.548l7.025-0.957v6.784H3V5.548zm0 12.904l7.025 0.957V12.625H3v5.827zm7.888 1.058l10.112 1.39V12.625H10.888v6.885zm0-14.02v6.885H21V3.1l-10.112 1.39z',
     requirements: 'Windows 10 or later (64-bit)',
     downloads: [
-      { name: 'MSI Installer (.msi)', file: 'ferrite-windows-x64.msi', recommended: true },
+      { name: 'MSI Installer (.msi)', file: 'ferrite-windows-x64.msi', recommended: true, hint: 'File associations, context menu, add-to-PATH' },
       { name: 'Portable (.zip)', file: 'ferrite-portable-windows-x64.zip' },
+      { name: 'PortableApps (.paf.exe)', file: 'ferrite-portable.paf.exe', hint: 'For PortableApps.com platform' },
     ],
   },
   {
@@ -219,9 +220,17 @@ const platforms: Platform[] = [
                   <li>All settings are stored in the <code class="px-1.5 py-0.5 bg-code rounded text-xs">portable</code> folder next to the executable</li>
                 </ol>
               </div>
+              <div>
+                <strong class="text-text-primary">PortableApps.com Format:</strong>
+                <ol class="mt-2 space-y-1 list-decimal list-inside">
+                  <li>Download the <code class="px-1.5 py-0.5 bg-code rounded text-xs">.paf.exe</code> installer</li>
+                  <li>Run it inside your PortableApps.com platform folder</li>
+                  <li>No registry writes, no AppData — everything stays portable</li>
+                </ol>
+              </div>
             </div>
             <p class="text-xs text-text-tertiary mt-4">
-              Note: Windows may show a SmartScreen warning. Click "More info" then "Run anyway" to proceed.
+              Note: Ferrite is code-signed since v0.2.6.1. You should not see SmartScreen warnings on current versions.
             </p>
           </div>
 
@@ -268,6 +277,15 @@ const platforms: Platform[] = [
               <div>
                 <strong class="text-text-primary">Arch Linux (AUR):</strong>
                 <pre class="mt-2 p-3 bg-code rounded-lg text-xs font-mono overflow-x-auto"><code>yay -Sy ferrite-bin</code></pre>
+              </div>
+              <div>
+                <strong class="text-text-primary">Nix/NixOS:</strong>
+                <pre class="mt-2 p-3 bg-code rounded-lg text-xs font-mono overflow-x-auto"><code># Run directly
+nix run github:OlaProeis/Ferrite
+
+# Or add to your flake inputs
+nix build github:OlaProeis/Ferrite</code></pre>
+                <p class="text-xs text-text-tertiary mt-2">Supports x86_64 and aarch64 on Linux and macOS. See the <a href="https://github.com/OlaProeis/Ferrite#nix" target="_blank" rel="noopener noreferrer" class="text-rust hover:underline">flake documentation</a> for declarative NixOS/Home Manager usage.</p>
               </div>
             </div>
           </div>
