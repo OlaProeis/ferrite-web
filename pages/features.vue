@@ -1,24 +1,20 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Features - Ferrite',
-  description: 'Discover what makes Ferrite different: native Mermaid diagrams, semantic minimap, CSV viewing, and more. This is a work in process, and not all features of mermaid.js currently work',
+  description: 'Discover what makes Ferrite different: custom editor engine, native Mermaid diagrams, command palette, image & PDF viewers, text shaping, and more — all in native Rust.',
   ogTitle: 'Features - Ferrite',
-  ogDescription: 'Discover what makes Ferrite different: native Mermaid diagrams, semantic minimap, CSV viewing, and more.',
+  ogDescription: 'A native Rust markdown editor with Mermaid diagrams, command palette, image & PDF viewers, text shaping, and more.',
   ogImage: 'https://getferrite.dev/img/og-image.png',
 })
 
-// Add breadcrumbs
 useBreadcrumbs([
   { name: 'Home', path: '/' },
   { name: 'Features' },
 ])
-
-const activeFeature = ref<string | null>(null)
 </script>
 
 <template>
   <div>
-    <!-- Spacer for fixed header -->
     <div class="h-16 lg:h-20" />
 
     <!-- Hero -->
@@ -37,7 +33,7 @@ const activeFeature = ref<string | null>(null)
       </div>
     </section>
 
-    <!-- Latest: v0.2.8 -->
+    <!-- What's New in v0.2.8 -->
     <section class="section bg-gradient-to-b from-rust/5 to-emerald-500/5">
       <div class="container-narrow">
         <div class="text-center mb-10">
@@ -74,7 +70,7 @@ const activeFeature = ref<string | null>(null)
               </svg>
             </div>
             <h4 class="font-semibold text-text-primary mb-2">HarfRust Text Shaping</h4>
-            <p class="text-sm text-text-tertiary">Phase 2 Unicode support: proper shaping for Arabic, Bengali, Devanagari, and other complex scripts via HarfRust.</p>
+            <p class="text-sm text-text-tertiary">Proper shaping for Arabic, Bengali, Devanagari, and other complex scripts via HarfRust.</p>
           </div>
           <div class="card p-6 border-emerald-500/30">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4">
@@ -129,27 +125,31 @@ const activeFeature = ref<string | null>(null)
       </div>
     </section>
 
-    <!-- Bento Grid -->
-    <section class="pb-20">
+    <!-- Core Features -->
+    <section class="py-16 lg:py-24">
       <div class="container-wide">
+        <div class="max-w-2xl mx-auto text-center mb-12 lg:mb-16">
+          <span class="badge-rust mb-4">Core Features</span>
+          <h2 class="font-display font-bold text-display-md text-text-primary mb-4">
+            Everything you need, nothing you don't
+          </h2>
+        </div>
+
         <div class="grid grid-cols-12 gap-4 lg:gap-6">
-          
-          <!-- Large: FerriteEditor - v0.2.6 -->
-          <div class="col-span-12 card-hover overflow-hidden group relative min-h-[320px]">
+
+          <!-- Hero: The Editor Engine -->
+          <div class="col-span-12 card-hover overflow-hidden group relative min-h-[300px]">
             <div class="absolute inset-0 bg-gradient-to-br from-rust/10 to-emerald-500/5" />
             <div class="relative p-6 lg:p-8 h-full flex flex-col">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-rust text-sm font-mono">// v0.2.6</span>
-              </div>
+              <span class="text-rust text-sm font-mono mb-2">// the engine</span>
               <h2 class="font-display font-bold text-2xl lg:text-3xl text-text-primary mb-3">
-                FerriteEditor: Custom Editor from Scratch
+                Custom Editor, Built from Scratch
               </h2>
               <p class="text-text-secondary mb-6 max-w-2xl">
-                Complete ground-up reimplementation of the text editor. <span class="text-rust font-semibold">Massive memory savings</span> - a 4MB file now adds ~15MB (was 1.5GB with egui's TextEdit). 
-                Virtual scrolling, rope-based buffer, and O(log n) text operations.
+                FerriteEditor is a ground-up text editor built with egui drawing primitives. 
+                <span class="text-rust font-semibold">100x less memory</span> than the previous egui TextEdit &mdash; 
+                a 4MB file uses ~15MB (was 1.5GB). Rope-based buffer with O(log n) text operations.
               </p>
-              
-              <!-- Feature pills -->
               <div class="mt-auto flex gap-3 flex-wrap">
                 <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">virtual scrolling</span>
                 <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-emerald-400 border border-emerald-500/30">multi-cursor</span>
@@ -163,8 +163,8 @@ const activeFeature = ref<string | null>(null)
             </div>
           </div>
 
-          <!-- Large: Mermaid Diagrams -->
-          <div class="col-span-12 lg:col-span-8 card-hover overflow-hidden group relative min-h-[280px]">
+          <!-- Mermaid Diagrams -->
+          <div class="col-span-12 lg:col-span-8 card-hover overflow-hidden group relative min-h-[260px]">
             <div class="absolute inset-0 bg-gradient-to-br from-rust/5 to-transparent" />
             <div class="relative p-6 lg:p-8 h-full flex flex-col">
               <span class="text-rust text-sm font-mono mb-2">// diagrams</span>
@@ -175,8 +175,6 @@ const activeFeature = ref<string | null>(null)
                 11 diagram types rendered in pure Rust. No JavaScript, no network calls.
                 Flowcharts, sequence, state, class, ER, git graph, gantt, and more.
               </p>
-              
-              <!-- Mini diagram preview -->
               <div class="mt-auto flex gap-3 flex-wrap">
                 <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-text-secondary border border-ferrite-border">flowchart</span>
                 <span class="px-3 py-1.5 bg-ferrite-surface rounded-lg text-xs font-mono text-text-secondary border border-ferrite-border">sequence</span>
@@ -190,20 +188,49 @@ const activeFeature = ref<string | null>(null)
             </div>
           </div>
 
-          <!-- Stats: Memory Improvement -->
-          <div class="col-span-6 lg:col-span-2 card-hover p-6 flex flex-col items-center justify-center text-center">
-            <span class="text-4xl lg:text-5xl font-display font-bold text-rust mb-2">5x</span>
-            <span class="text-sm text-text-tertiary">less RAM usage</span>
-            <span class="text-xs text-text-tertiary mt-1">vs previous versions</span>
+          <!-- Stats column -->
+          <div class="col-span-12 lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
+            <div class="card-hover p-6 flex items-center justify-between">
+              <div>
+                <span class="text-3xl font-display font-bold text-rust">100x</span>
+                <p class="text-sm text-text-tertiary mt-1">less RAM</p>
+              </div>
+              <div class="text-text-tertiary text-xs text-right">
+                4MB file: 15MB<br/>was 1.5GB before
+              </div>
+            </div>
+            <div class="card-hover p-6 flex items-center justify-between">
+              <div>
+                <span class="text-3xl font-display font-bold text-rust">&lt;1s</span>
+                <p class="text-sm text-text-tertiary mt-1">cold start</p>
+              </div>
+              <div class="text-text-tertiary text-xs text-right">
+                native Rust<br/>no Electron
+              </div>
+            </div>
           </div>
 
-          <!-- Stats: Startup -->
-          <div class="col-span-6 lg:col-span-2 card-hover p-6 flex flex-col items-center justify-center text-center">
-            <span class="text-4xl lg:text-5xl font-display font-bold text-rust mb-2">&lt;1s</span>
-            <span class="text-sm text-text-tertiary">cold start</span>
+          <!-- Command Palette -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 card-hover p-6 lg:p-8">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-lg text-text-primary">Command Palette</h3>
+                <p class="text-sm text-text-tertiary">Alt+Space</p>
+              </div>
+            </div>
+            <p class="text-text-secondary text-sm">
+              Fuzzy search across every action. Recent commands, category grouping, 
+              and <span class="text-rust">shortcut hints</span> for quick discovery.
+            </p>
           </div>
 
-          <!-- Medium: Split View -->
+          <!-- Split View -->
           <div class="col-span-12 md:col-span-6 lg:col-span-4 card-hover p-6 lg:p-8">
             <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-gradient-rust flex items-center justify-center shrink-0">
@@ -223,7 +250,7 @@ const activeFeature = ref<string | null>(null)
             </p>
           </div>
 
-          <!-- Medium: Semantic Minimap -->
+          <!-- Semantic Minimap -->
           <div class="col-span-12 md:col-span-6 lg:col-span-4 card-hover p-6 lg:p-8">
             <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shrink-0">
@@ -244,10 +271,51 @@ const activeFeature = ref<string | null>(null)
             </p>
           </div>
 
-          <!-- Medium: CSV Viewer -->
+          <!-- Wikilinks & Backlinks -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 card-hover p-6 lg:p-8">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-lg text-text-primary">Wikilinks &amp; Backlinks</h3>
+                <p class="text-sm text-text-tertiary">Note-taking ready</p>
+              </div>
+            </div>
+            <p class="text-text-secondary text-sm">
+              <span class="text-rust font-mono text-xs">[[wikilinks]]</span> with click-to-navigate. 
+              Backlinks panel shows all files linking to the current document.
+            </p>
+          </div>
+
+          <!-- Image & PDF Viewers -->
           <div class="col-span-12 md:col-span-6 lg:col-span-4 card-hover p-6 lg:p-8">
             <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display font-semibold text-lg text-text-primary">Image &amp; PDF Viewers</h3>
+                <p class="text-sm text-text-tertiary">Native, in-editor</p>
+              </div>
+            </div>
+            <p class="text-text-secondary text-sm">
+              Open images (PNG, JPEG, GIF, WebP, BMP) and PDFs as tabs. 
+              <span class="text-rust">Pure Rust</span> PDF rendering via hayro.
+            </p>
+          </div>
+
+          <!-- CSV/TSV Viewer -->
+          <div class="col-span-12 md:col-span-6 lg:col-span-4 card-hover p-6 lg:p-8">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shrink-0">
                 <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="3" y="3" width="18" height="18" rx="2"/>
                   <line x1="3" y1="9" x2="21" y2="9"/>
@@ -263,11 +331,11 @@ const activeFeature = ref<string | null>(null)
             </div>
             <p class="text-text-secondary text-sm">
               Native table view with alternating column colors. Auto-detects 
-              delimiter (comma, tab, semicolon, pipe).
+              delimiter (comma, tab, semicolon, pipe). Lazy parsing for large files.
             </p>
           </div>
 
-          <!-- Wide: Editor Features List -->
+          <!-- Editing Experience -->
           <div class="col-span-12 lg:col-span-6 card-hover p-6 lg:p-8">
             <span class="text-rust text-sm font-mono mb-4 block">// editing</span>
             <h3 class="font-display font-bold text-xl text-text-primary mb-6">
@@ -280,23 +348,27 @@ const activeFeature = ref<string | null>(null)
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">Vim mode</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">GitHub-style callouts</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">Frontmatter editor</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
                 <span class="text-sm text-text-secondary">Zen mode (F11)</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Auto-save</span>
+                <span class="text-sm text-text-secondary">Auto-save &amp; session restore</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Session restore</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Custom shortcuts</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Snippets</span>
+                <span class="text-sm text-text-secondary">Custom shortcuts &amp; snippets</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
@@ -312,12 +384,16 @@ const activeFeature = ref<string | null>(null)
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Drag & drop images</span>
+                <span class="text-sm text-text-secondary">Drag &amp; drop images</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">Strict line breaks</span>
               </div>
             </div>
           </div>
 
-          <!-- Wide: Dev Tools List -->
+          <!-- Developer Tools -->
           <div class="col-span-12 lg:col-span-6 card-hover p-6 lg:p-8">
             <span class="text-rust text-sm font-mono mb-4 block">// dev tools</span>
             <h3 class="font-display font-bold text-xl text-text-primary mb-6">
@@ -342,7 +418,7 @@ const activeFeature = ref<string | null>(null)
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Live pipeline panel</span>
+                <span class="text-sm text-text-secondary">Integrated terminal</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
@@ -362,32 +438,32 @@ const activeFeature = ref<string | null>(null)
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">CJK lazy loading</span>
+                <span class="text-sm text-text-secondary">Single-instance protocol</span>
               </div>
               <div class="flex items-center gap-2">
-                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                <span class="text-sm text-text-secondary">Command palette</span>
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">Background file loading</span>
               </div>
               <div class="flex items-center gap-2">
-                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                <span class="text-sm text-text-secondary">Image &amp; PDF viewer tabs</span>
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">Check for updates</span>
               </div>
             </div>
           </div>
 
-          <!-- Accent: CJK Support -->
+          <!-- Unicode & CJK -->
           <div class="col-span-12 md:col-span-6 lg:col-span-4 card-hover p-6 lg:p-8 bg-gradient-to-br from-ferrite-surface to-ferrite-surface-elevated">
             <span class="text-3xl mb-3 block">&#x4E2D;&#x6587; &#x65E5;&#x672C;&#x8A9E; &#xD55C;&#xAE00;</span>
             <h3 class="font-display font-semibold text-lg text-text-primary mb-2">
-              CJK Support
+              Unicode &amp; CJK
             </h3>
             <p class="text-text-secondary text-sm">
-              Full Chinese, Japanese, Korean rendering. 
-              Custom font selection for regional glyph preferences.
+              Full Chinese, Japanese, Korean rendering. HarfRust text shaping for Arabic, Bengali, Devanagari, and 11+ script families. 
+              Custom font selection per script.
             </p>
           </div>
 
-          <!-- Accent: i18n -->
+          <!-- Community Translations -->
           <div class="col-span-12 md:col-span-6 lg:col-span-4 card-hover p-6 lg:p-8">
             <div class="flex items-center gap-3 mb-4">
               <span class="text-2xl">&#x1F310;</span>
@@ -409,13 +485,11 @@ const activeFeature = ref<string | null>(null)
             </a>
           </div>
 
-          <!-- Stats: Diagram Types -->
+          <!-- Stats: Diagram Types + Platforms -->
           <div class="col-span-6 lg:col-span-2 card-hover p-6 flex flex-col items-center justify-center text-center">
             <span class="text-4xl lg:text-5xl font-display font-bold text-rust mb-2">11</span>
             <span class="text-sm text-text-tertiary">diagram types</span>
           </div>
-
-          <!-- Stats: Platforms -->
           <div class="col-span-6 lg:col-span-2 card-hover p-6 flex flex-col items-center justify-center text-center">
             <span class="text-4xl lg:text-5xl font-display font-bold text-rust mb-2">3</span>
             <span class="text-sm text-text-tertiary">platforms</span>
@@ -428,80 +502,7 @@ const activeFeature = ref<string | null>(null)
     <!-- Hidden Gems / Power User Tips -->
     <FeatureTipsSection />
 
-    <!-- Fixed in v0.2.6 -->
-    <section class="section bg-emerald-500/5">
-      <div class="container-narrow">
-        <h2 class="font-display font-bold text-display-sm text-text-primary mb-4 text-center">
-          Fixed in v0.2.6
-        </h2>
-        <p class="text-text-secondary text-center mb-8">
-          The custom FerriteEditor resolved longstanding limitations:
-        </p>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          <div class="card p-5 border-emerald-500/30">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-emerald-500">&#x2713;</span>
-              Multi-cursor
-            </h4>
-            <p class="text-sm text-text-tertiary">Ctrl+Click to add cursors. Full simultaneous editing support.</p>
-          </div>
-          <div class="card p-5 border-emerald-500/30">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-emerald-500">&#x2713;</span>
-              Code folding
-            </h4>
-            <p class="text-sm text-text-tertiary">Fold regions with gutter indicators. Navigation skips folds.</p>
-          </div>
-          <div class="card p-5 border-emerald-500/30">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-emerald-500">&#x2713;</span>
-              IME support
-            </h4>
-            <p class="text-sm text-text-tertiary">Chinese Pinyin, Japanese Romaji, Korean Hangul input.</p>
-          </div>
-          <div class="card p-5 border-emerald-500/30">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-emerald-500">&#x2713;</span>
-              Large file memory
-            </h4>
-            <p class="text-sm text-text-tertiary">Virtual scrolling + rope buffer. 4MB file: 15MB vs 1.5GB before.</p>
-          </div>
-        </div>
-
-        <h2 class="font-display font-bold text-display-sm text-text-primary mb-4 text-center">
-          Remaining limitations
-        </h2>
-        <p class="text-text-secondary text-center mb-8">
-          We're building in public. Here's what's not yet implemented:
-        </p>
-        
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="card p-5">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-amber-500">&#x26A0;</span>
-              No LaTeX math yet
-            </h4>
-            <p class="text-sm text-text-tertiary">Math rendering ($...$) not implemented. Planned for v0.4.0.</p>
-          </div>
-          <div class="card p-5">
-            <h4 class="font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <span class="text-amber-500">&#x26A0;</span>
-              No executable code blocks yet
-            </h4>
-            <p class="text-sm text-text-tertiary">Running code snippets inline is planned for v0.2.9.</p>
-          </div>
-        </div>
-
-        <p class="text-center text-sm text-text-tertiary mt-6">
-          See our 
-          <a href="https://github.com/OlaProeis/ferrite/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer" class="text-rust hover:underline">roadmap</a>
-          for planned features.
-        </p>
-      </div>
-    </section>
-
-    <!-- CTA -->
+    <!-- Limitations note + CTA -->
     <section class="section">
       <div class="container-narrow text-center">
         <h2 class="font-display font-bold text-display-sm text-text-primary mb-4">
@@ -510,7 +511,7 @@ const activeFeature = ref<string | null>(null)
         <p class="text-text-secondary mb-8">
           It's free, it's fast, and it works offline.
         </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <NuxtLink to="/download" class="btn-primary">
             Download Ferrite
           </NuxtLink>
@@ -523,6 +524,10 @@ const activeFeature = ref<string | null>(null)
             View Source
           </a>
         </div>
+        <p class="text-sm text-text-tertiary">
+          Some features are still in progress: LaTeX math rendering (planned for v0.4.0) and executable code blocks (planned for v0.2.9).
+          See the <a href="https://github.com/OlaProeis/ferrite/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer" class="text-rust hover:underline">roadmap</a> for what's coming next.
+        </p>
       </div>
     </section>
   </div>
