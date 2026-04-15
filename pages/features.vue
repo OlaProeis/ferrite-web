@@ -37,20 +37,20 @@ const activeFeature = ref<string | null>(null)
       </div>
     </section>
 
-    <!-- Latest: v0.2.7 -->
+    <!-- Latest: v0.2.8 -->
     <section class="section bg-gradient-to-b from-rust/5 to-emerald-500/5">
       <div class="container-narrow">
         <div class="text-center mb-10">
           <div class="inline-flex items-center gap-2 mb-4">
-            <span class="badge-rust">v0.2.7</span>
+            <span class="badge-rust">v0.2.8</span>
             <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded">LATEST</span>
           </div>
           <h2 class="font-display font-bold text-display-md text-text-primary mb-4">
-            Performance, Features &amp; Polish
+            Performance, Text Shaping &amp; Viewers
           </h2>
           <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-            Wikilinks &amp; backlinks, Vim mode, GitHub-style callouts, visual frontmatter editor, 
-            welcome view, Unicode complex script support, and 20+ bug fixes.
+            Command Palette, HarfRust text shaping for complex scripts, image &amp; PDF viewer tabs, 
+            major rendered view performance overhaul, table rich text, and 13 bug fixes.
           </p>
         </div>
         
@@ -58,45 +58,12 @@ const activeFeature = ref<string | null>(null)
           <div class="card p-6 border-emerald-500/30">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
             </div>
-            <h4 class="font-semibold text-text-primary mb-2">Wikilinks &amp; Backlinks</h4>
-            <p class="text-sm text-text-tertiary">[[wikilinks]] syntax with click-to-navigate. Backlinks panel shows all files linking to the current document.</p>
-          </div>
-          <div class="card p-6 border-emerald-500/30">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="4 17 10 11 4 5"/>
-                <line x1="12" y1="19" x2="20" y2="19"/>
-              </svg>
-            </div>
-            <h4 class="font-semibold text-text-primary mb-2">Vim Mode</h4>
-            <p class="text-sm text-text-tertiary">Optional Vim-style modal editing with Normal, Insert, and Visual modes. Toggle in Settings.</p>
-          </div>
-          <div class="card p-6 border-emerald-500/30">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                <line x1="12" y1="9" x2="12" y2="13"/>
-                <line x1="12" y1="17" x2="12.01" y2="17"/>
-              </svg>
-            </div>
-            <h4 class="font-semibold text-text-primary mb-2">GitHub-Style Callouts</h4>
-            <p class="text-sm text-text-tertiary">[!NOTE], [!TIP], [!WARNING], [!CAUTION], [!IMPORTANT] with custom titles and collapsible blocks.</p>
-          </div>
-          <div class="card p-6 border-emerald-500/30">
-            <div class="w-10 h-10 rounded-xl bg-gradient-rust flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-              </svg>
-            </div>
-            <h4 class="font-semibold text-text-primary mb-2">Frontmatter Editor</h4>
-            <p class="text-sm text-text-tertiary">Visual YAML frontmatter panel with form-based key-value editing, date fields, and tag chips.</p>
+            <h4 class="font-semibold text-text-primary mb-2">Command Palette</h4>
+            <p class="text-sm text-text-tertiary">Alt+Space launches a searchable command palette with fuzzy search, recent commands, category grouping, and shortcut hints.</p>
           </div>
           <div class="card p-6 border-emerald-500/30">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center mb-4">
@@ -106,8 +73,41 @@ const activeFeature = ref<string | null>(null)
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
               </svg>
             </div>
-            <h4 class="font-semibold text-text-primary mb-2">Unicode Scripts (Phase 1)</h4>
-            <p class="text-sm text-text-tertiary">Font loading for 11 script families: Arabic, Bengali, Devanagari, Thai, Hebrew, Tamil, and more.</p>
+            <h4 class="font-semibold text-text-primary mb-2">HarfRust Text Shaping</h4>
+            <p class="text-sm text-text-tertiary">Phase 2 Unicode support: proper shaping for Arabic, Bengali, Devanagari, and other complex scripts via HarfRust.</p>
+          </div>
+          <div class="card p-6 border-emerald-500/30">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-text-primary mb-2">Image &amp; PDF Viewers</h4>
+            <p class="text-sm text-text-tertiary">Open PNG, JPEG, GIF, WebP, BMP as image tabs. View PDFs natively with hayro (pure Rust).</p>
+          </div>
+          <div class="card p-6 border-emerald-500/30">
+            <div class="w-10 h-10 rounded-xl bg-gradient-rust flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-text-primary mb-2">Rendered View Performance</h4>
+            <p class="text-sm text-text-tertiary">AST caching, viewport culling, block height cache, and lazy estimation make large-file rendered view usable.</p>
+          </div>
+          <div class="card p-6 border-emerald-500/30">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="3" y1="15" x2="21" y2="15"/>
+                <line x1="9" y1="3" x2="9" y2="21"/>
+                <line x1="15" y1="3" x2="15" y2="21"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold text-text-primary mb-2">Table Rich Text</h4>
+            <p class="text-sm text-text-tertiary">Table cells support bold, italic, strikethrough, code, and nesting with click-to-edit in rendered view.</p>
           </div>
           <div class="card p-6 border-emerald-500/30">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center mb-4">
@@ -116,8 +116,8 @@ const activeFeature = ref<string | null>(null)
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
             </div>
-            <h4 class="font-semibold text-text-primary mb-2">20+ Bug Fixes</h4>
-            <p class="text-sm text-text-tertiary">Crash fixes, IME backspace, scrollbar accuracy, light mode visibility, binary file handling, and more.</p>
+            <h4 class="font-semibold text-text-primary mb-2">13 Bug Fixes</h4>
+            <p class="text-sm text-text-tertiary">IME positioning, Windows 11 borderless, terminal CJK, custom font crash, table formatting, and more.</p>
           </div>
         </div>
 
@@ -364,6 +364,14 @@ const activeFeature = ref<string | null>(null)
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
                 <span class="text-sm text-text-secondary">CJK lazy loading</span>
               </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span class="text-sm text-text-secondary">Command palette</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span class="text-sm text-text-secondary">Image &amp; PDF viewer tabs</span>
+              </div>
             </div>
           </div>
 
@@ -481,7 +489,7 @@ const activeFeature = ref<string | null>(null)
               <span class="text-amber-500">&#x26A0;</span>
               No executable code blocks yet
             </h4>
-            <p class="text-sm text-text-tertiary">Running code snippets inline is planned for v0.2.8.</p>
+            <p class="text-sm text-text-tertiary">Running code snippets inline is planned for v0.2.9.</p>
           </div>
         </div>
 

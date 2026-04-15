@@ -15,6 +15,54 @@ useBreadcrumbs([
 
 const releases = [
   {
+    version: '0.2.8',
+    date: 'April 2026',
+    highlights: [
+      'Command Palette (Alt+Space)',
+      'HarfRust text shaping for complex scripts',
+      'Image viewer tabs (PNG/JPEG/GIF/WebP/BMP)',
+      'PDF viewer tabs (pure Rust)',
+      'Rendered view performance overhaul',
+      'Table cell rich text with click-to-edit',
+      '13 bug fixes',
+    ],
+    changes: {
+      added: [
+        'Command Palette (Alt+Space) - searchable command launcher with fuzzy search, recent commands, category grouping, and shortcut hints',
+        'Windows Alt+Space suppression - thread-level keyboard hook prevents OS system menu conflict',
+        'HarfRust text shaping engine (Phase 2) - proper rendering for Arabic, Bengali, Devanagari, and other complex scripts',
+        'Image viewer tabs - open PNG, JPEG, GIF, WebP, BMP files directly as image tabs',
+        'PDF viewer tabs - native PDF viewing via hayro (pure Rust, no system dependencies)',
+        'Background file loading for 5MB+ files with progress indication',
+        'Strict line breaks (Obsidian model) - single newlines create line breaks in rendered view',
+        'Middle-click to close tabs',
+        'Table cell rich text rendering - bold, italic, strikethrough, code, and nesting with click-to-edit in rendered view',
+      ],
+      improved: [
+        'Rendered view performance overhaul - AST caching, viewport culling, block height cache, and lazy estimation for large files',
+        'Per-frame O(N) elimination for large documents in rendered view',
+        'CSV viewer per-frame allocation fixes (reduced unnecessary reallocation)',
+        'TreeViewer (JSON/YAML/TOML) per-frame allocation fixes',
+        'Central panel per-frame allocation optimizations',
+      ],
+      fixed: [
+        'macOS .md file association not opening in Ferrite (#102)',
+        'Windows IME candidate box positioning (#103) - applied layer_transform_to_global() to IME coordinates',
+        'Custom font crash on Linux (#114)',
+        'Linux Cinnamon desktop dialog detection (#116)',
+        'Table inline formatting preservation and rendering (#117)',
+        'Terminal CJK double-width character overlap (#110) - unicode-width crate, 2-column cursor advancement',
+        'Windows 11 borderless window offset (#112) - .with_transparent(true) DWM workaround',
+        'Slow rendering on large documents (#105) - AST caching and viewport culling',
+        'Table inline formatting lost on cell edit',
+        'Table strikethrough not rendering in cells',
+        'Table code spans not rendering in cells',
+        'Table nested formatting (bold+italic) not rendering',
+        'CSV viewer unnecessary per-frame parsing',
+      ],
+    },
+  },
+  {
     version: '0.2.7',
     date: 'March 2026',
     highlights: [

@@ -156,6 +156,18 @@
               <span class="w-1 h-1 rounded-full bg-rust"></span>
               Zen mode
             </span>
+            <span class="flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
+              Command palette
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
+              Image &amp; PDF viewer
+            </span>
+            <span class="flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-emerald-500"></span>
+              HarfRust text shaping
+            </span>
           </div>
         </div>
       </div>

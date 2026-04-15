@@ -1,16 +1,15 @@
 <script setup lang="ts">
 const upcomingFeatures = [
   {
-    version: 'v0.2.8',
+    version: 'v0.2.9',
     status: 'next',
-    title: 'UI, Accessibility & Text Shaping',
+    title: 'Platform Stack Upgrade, Export & Code Execution',
     items: [
+      'eframe/egui 0.31+ upgrade (Wayland, macOS Sonoma, Windows 11 fixes)',
+      'PDF & HTML export from markdown',
       'Executable code blocks (run shell/Python snippets)',
-      'Unicode text shaping engine (HarfRust - Phase 2)',
-      'LSP integration (diagnostics, hover, go to definition)',
-      'Traditional Alt-key menu bar',
-      'XML tree viewer, INI/ENV file support',
-      'Log file viewing with level highlighting',
+      'LSP integration fixes (memory, diagnostics panel, incremental sync)',
+      'Print preview for paginated output',
     ],
   },
   {
