@@ -3,9 +3,8 @@ const upcomingFeatures = [
   {
     version: 'v0.3.1',
     status: 'next',
-    title: 'macOS Signing, RTL & Diagram Export',
+    title: 'RTL Text & Diagram Export',
     items: [
-      'macOS code signing & notarization (no Gatekeeper warnings)',
       'Full RTL & bidirectional text support',
       'SVG and PNG export for Mermaid diagrams',
       'Manual diagram layout with drag-to-reposition',

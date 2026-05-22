@@ -316,11 +316,11 @@ Fix: `restore_from_session_result` now splits recovery into two branches. `Resol
 
 ## What's Next: v0.3.1
 
-The next release focuses on distribution quality and text rendering:
+The next release focuses on text rendering and diagram export:
 
-- **macOS code signing & notarization** — no more Gatekeeper warnings for unsigned CI builds ([#130](https://github.com/OlaProeis/Ferrite/issues/130))
 - **Full RTL & bidirectional text support** — editor and rendered view
 - **SVG and PNG export for Mermaid diagrams** — save any diagram directly from the preview
+- **Manual diagram layout** — drag-to-reposition nodes
 - **Mermaid renderer as standalone crate** — extraction for community use
 
 ---
