@@ -1,32 +1,20 @@
 <script setup lang="ts">
 const upcomingFeatures = [
   {
-    version: 'v0.2.9',
+    version: 'v0.3.1',
     status: 'next',
-    title: 'Platform Stack Upgrade, Export & Code Execution',
+    title: 'macOS Signing, RTL & Diagram Export',
     items: [
-      'eframe/egui 0.31+ upgrade (Wayland, macOS Sonoma, Windows 11 fixes)',
-      'PDF & HTML export from markdown',
-      'Executable code blocks (run shell/Python snippets)',
-      'LSP integration fixes (memory, diagnostics panel, incremental sync)',
-      'Print preview for paginated output',
-    ],
-  },
-  {
-    version: 'v0.3.0',
-    status: 'planned',
-    title: 'Mermaid Crate, RTL & Markdown',
-    items: [
-      'Extract Mermaid renderer as standalone Rust crate',
+      'macOS code signing & notarization (no Gatekeeper warnings)',
       'Full RTL & bidirectional text support',
-      'SVG and PNG export for diagrams',
-      'HTML rendering for GitHub parity',
+      'SVG and PNG export for Mermaid diagrams',
       'Manual diagram layout with drag-to-reposition',
+      'Extract Mermaid renderer as standalone Rust crate',
     ],
   },
   {
     version: 'v0.4.0',
-    status: 'future',
+    status: 'planned',
     title: 'Math & Document Formats',
     items: [
       'Native LaTeX math rendering ($...$ and $$...$$)',
@@ -36,7 +24,18 @@ const upcomingFeatures = [
     ],
   },
   {
-    version: 'v0.5.0+',
+    version: 'v0.5.0',
+    status: 'future',
+    title: 'Collaboration & Sync',
+    items: [
+      'Real-time collaborative editing',
+      'Cloud sync for notes and settings',
+      'Cross-device session continuity',
+      'Shared workspaces',
+    ],
+  },
+  {
+    version: 'v1.0+',
     status: 'vision',
     title: 'Modular Architecture',
     items: [

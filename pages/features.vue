@@ -33,87 +33,87 @@ useBreadcrumbs([
       </div>
     </section>
 
-    <!-- What's New in v0.2.8 -->
+    <!-- What's New in v0.3.0 -->
     <section class="section bg-gradient-to-b from-rust/5 to-emerald-500/5">
       <div class="container-narrow">
         <div class="text-center mb-10">
           <div class="inline-flex items-center gap-2 mb-4">
-            <span class="badge-rust">v0.2.8</span>
+            <span class="badge-rust">v0.3.0</span>
             <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded">LATEST</span>
           </div>
           <h2 class="font-display font-bold text-display-md text-text-primary mb-4">
-            Performance, Text Shaping &amp; Viewers
+            Platform Refresh &amp; WYSIWYG Editing
           </h2>
           <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-            Command Palette, HarfRust text shaping for complex scripts, image &amp; PDF viewer tabs, 
-            major rendered view performance overhaul, table rich text, and 13 bug fixes.
+            Rendered edit session (WYSIWYG block switching), PDF &amp; HTML export, executable code blocks,
+            Mermaid first wave, Phosphor icons, split-view scroll sync — on eframe/egui 0.34.2 with Rust 1.92.
           </p>
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           <div class="card p-6 border-emerald-500/30">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-rust flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
               </svg>
             </div>
-            <h4 class="font-semibold text-text-primary mb-2">Command Palette</h4>
-            <p class="text-sm text-text-tertiary">Alt+Space launches a searchable command palette with fuzzy search, recent commands, category grouping, and shortcut hints.</p>
+            <h4 class="font-semibold text-text-primary mb-2">Rendered Edit Session</h4>
+            <p class="text-sm text-text-tertiary">One click opens any WYSIWYG block — heading, paragraph, list item, or table cell. Previous block commits automatically. True WYSIWYG.</p>
           </div>
           <div class="card p-6 border-emerald-500/30">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="2" y1="12" x2="22" y2="12"/>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
               </svg>
             </div>
-            <h4 class="font-semibold text-text-primary mb-2">HarfRust Text Shaping</h4>
-            <p class="text-sm text-text-tertiary">Proper shaping for Arabic, Bengali, Devanagari, and other complex scripts via HarfRust.</p>
+            <h4 class="font-semibold text-text-primary mb-2">PDF &amp; HTML Export</h4>
+            <p class="text-sm text-text-tertiary">Export to PDF (page size, margins, link annotations) and themed HTML (Mermaid SVG, syntax-highlighted code). Print preview included.</p>
           </div>
           <div class="card p-6 border-emerald-500/30">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
+                <polyline points="4 17 10 11 4 5"/>
+                <line x1="12" y1="19" x2="20" y2="19"/>
               </svg>
             </div>
-            <h4 class="font-semibold text-text-primary mb-2">Image &amp; PDF Viewers</h4>
-            <p class="text-sm text-text-tertiary">Open PNG, JPEG, GIF, WebP, BMP as image tabs. View PDFs natively with hayro (pure Rust).</p>
+            <h4 class="font-semibold text-text-primary mb-2">Executable Code Blocks</h4>
+            <p class="text-sm text-text-tertiary">Run shell and Python snippets directly in the editor. Inline ANSI-colored output, exit status, timeout, Stop control, and first-run consent.</p>
           </div>
           <div class="card p-6 border-emerald-500/30">
-            <div class="w-10 h-10 rounded-xl bg-gradient-rust flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                <path d="M4.93 4.93a10 10 0 0 0 0 14.14"/>
               </svg>
             </div>
-            <h4 class="font-semibold text-text-primary mb-2">Rendered View Performance</h4>
-            <p class="text-sm text-text-tertiary">AST caching, viewport culling, block height cache, and lazy estimation make large-file rendered view usable.</p>
+            <h4 class="font-semibold text-text-primary mb-2">Mermaid First Wave</h4>
+            <p class="text-sm text-text-tertiary">Insert toolbar with diagram templates, inline validation with squiggles, flowchart extra shapes, state fork/join/history, and major edge routing improvements.</p>
           </div>
           <div class="card p-6 border-emerald-500/30">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <line x1="3" y1="9" x2="21" y2="9"/>
-                <line x1="3" y1="15" x2="21" y2="15"/>
-                <line x1="9" y1="3" x2="9" y2="21"/>
-                <line x1="15" y1="3" x2="15" y2="21"/>
+                <line x1="12" y1="3" x2="12" y2="21"/>
+                <path d="M3 12h9"/>
               </svg>
             </div>
-            <h4 class="font-semibold text-text-primary mb-2">Table Rich Text</h4>
-            <p class="text-sm text-text-tertiary">Table cells support bold, italic, strikethrough, code, and nesting with click-to-edit in rendered view.</p>
+            <h4 class="font-semibold text-text-primary mb-2">Split-View Scroll Sync</h4>
+            <p class="text-sm text-text-tertiary">Raw editor and rendered preview stay aligned while scrolling. Source line + fraction anchors keep code blocks and Mermaid diagrams in sync.</p>
           </div>
           <div class="card p-6 border-emerald-500/30">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
               </svg>
             </div>
-            <h4 class="font-semibold text-text-primary mb-2">13 Bug Fixes</h4>
-            <p class="text-sm text-text-tertiary">IME positioning, Windows 11 borderless, terminal CJK, custom font crash, table formatting, and more.</p>
+            <h4 class="font-semibold text-text-primary mb-2">Phosphor Icons &amp; egui 0.34</h4>
+            <p class="text-sm text-text-tertiary">Full UI refresh with Phosphor icon set. Platform bump to eframe/egui 0.34.2 and Rust 1.92 MSRV with skrifa + vello_cpu text backend.</p>
           </div>
         </div>
 
@@ -344,7 +344,7 @@ useBreadcrumbs([
             <div class="grid grid-cols-2 gap-x-6 gap-y-3">
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">WYSIWYG markdown</span>
+                <span class="text-sm text-text-secondary">WYSIWYG block editing</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
@@ -364,6 +364,10 @@ useBreadcrumbs([
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">Quick note workflow</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
                 <span class="text-sm text-text-secondary">Auto-save &amp; session restore</span>
               </div>
               <div class="flex items-center gap-2">
@@ -372,11 +376,15 @@ useBreadcrumbs([
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Quick switcher</span>
+                <span class="text-sm text-text-secondary">Workspace quick switcher (Ctrl+P)</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Find in files</span>
+                <span class="text-sm text-text-secondary">Search in files (Ctrl+Shift+F)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">Split-view scroll sync</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
@@ -388,7 +396,7 @@ useBreadcrumbs([
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Strict line breaks</span>
+                <span class="text-sm text-text-secondary">User-configurable accent color</span>
               </div>
             </div>
           </div>
@@ -407,6 +415,14 @@ useBreadcrumbs([
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
                 <span class="text-sm text-text-secondary">40+ syntax languages</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">Executable code blocks</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
+                <span class="text-sm text-text-secondary">PDF &amp; HTML export</span>
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
@@ -430,10 +446,6 @@ useBreadcrumbs([
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">HTML export</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
                 <span class="text-sm text-text-secondary">CLI support</span>
               </div>
               <div class="flex items-center gap-2">
@@ -442,11 +454,7 @@ useBreadcrumbs([
               </div>
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Background file loading</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="w-1.5 h-1.5 rounded-full bg-rust" />
-                <span class="text-sm text-text-secondary">Check for updates</span>
+                <span class="text-sm text-text-secondary">Print preview</span>
               </div>
             </div>
           </div>
@@ -525,7 +533,7 @@ useBreadcrumbs([
           </a>
         </div>
         <p class="text-sm text-text-tertiary">
-          Some features are still in progress: LaTeX math rendering (planned for v0.4.0) and executable code blocks (planned for v0.2.9).
+          Some features are still in progress: LaTeX math rendering and RTL/bidirectional text are planned for upcoming releases.
           See the <a href="https://github.com/OlaProeis/ferrite/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer" class="text-rust hover:underline">roadmap</a> for what's coming next.
         </p>
       </div>
